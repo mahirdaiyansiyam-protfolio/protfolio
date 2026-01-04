@@ -65,8 +65,17 @@ const AboutSection = () => {
               </motion.div>
             </div>
 
+          </motion.div>
+
+          {/* Right - Title & Description */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="space-y-6"
+          >
             {/* Section label */}
-            <div className="mt-12 lg:mt-8">
+            <div>
               <span className="text-primary font-medium text-sm uppercase tracking-widest">
                 About Me
               </span>
@@ -76,15 +85,7 @@ const AboutSection = () => {
                 <span className="text-gradient">Experiences</span>
               </h2>
             </div>
-          </motion.div>
 
-          {/* Right - Description */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-6"
-          >
             <p className="text-lg text-muted-foreground leading-relaxed">
               I'm a passionate graphic designer dedicated to transforming ideas into 
               <span className="text-foreground font-medium"> compelling visual stories</span>. 
