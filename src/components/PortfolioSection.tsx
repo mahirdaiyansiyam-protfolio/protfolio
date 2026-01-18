@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import { motion, useInView, AnimatePresence } from 'framer-motion';
+import { motion, useInView, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { X } from 'lucide-react';
 
 // Import portfolio images
@@ -44,15 +44,32 @@ const PortfolioSection = () => {
   const [activeCategory, setActiveCategory] = useState('All');
   const [selectedItem, setSelectedItem] = useState<typeof portfolioItems[0] | null>(null);
   const ref = useRef(null);
+  const containerRef = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ['start end', 'end start'],
+  });
+
+  // Subtle parallax for the entire section
+  const sectionY = useTransform(scrollYProgress, [0, 1], [30, -30]);
 
   const filteredItems = activeCategory === 'All'
     ? portfolioItems
     : portfolioItems.filter(item => item.category === activeCategory);
 
   return (
-    <section id="portfolio" className="section-padding bg-background relative overflow-hidden">
-      <div className="container mx-auto" ref={ref}>
+    <section 
+      id="portfolio" 
+      ref={containerRef}
+      className="section-padding bg-background relative overflow-hidden"
+    >
+      <motion.div 
+        className="container mx-auto" 
+        ref={ref}
+        style={{ y: sectionY }}
+      >
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -90,7 +107,7 @@ const PortfolioSection = () => {
           ))}
         </motion.div>
 
-        {/* Portfolio Grid */}
+        {/* Portfolio Grid with enhanced scroll animations */}
         <motion.div
           layout
           className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
@@ -100,33 +117,45 @@ const PortfolioSection = () => {
               <motion.div
                 key={item.id}
                 layout
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="group relative aspect-square rounded-2xl overflow-hidden cursor-pointer"
+                initial={{ opacity: 0, y: 60, scale: 0.9 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: -30, scale: 0.9 }}
+                transition={{ 
+                  duration: 0.5, 
+                  delay: index * 0.08,
+                  type: 'spring',
+                  stiffness: 100
+                }}
+                whileHover={{ y: -10, transition: { duration: 0.3 } }}
+                className="group relative aspect-square rounded-2xl overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl hover:shadow-primary/20 transition-shadow duration-300"
                 onClick={() => setSelectedItem(item)}
                 data-cursor="pointer"
               >
-                {/* Image */}
-                <img
+                {/* Image with zoom on hover */}
+                <motion.img
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover"
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ duration: 0.6 }}
                 />
 
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                 {/* Content */}
-                <div className="absolute inset-0 flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-4 group-hover:translate-y-0">
+                <motion.div 
+                  className="absolute inset-0 flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-all duration-300"
+                  initial={{ y: 20 }}
+                  whileHover={{ y: 0 }}
+                >
                   <span className="text-xs text-primary font-medium uppercase tracking-wider mb-2">
                     {item.category}
                   </span>
                   <h3 className="text-lg font-heading font-semibold text-foreground">
                     {item.title}
                   </h3>
-                </div>
+                </motion.div>
 
                 {/* 3D tilt overlay */}
                 <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
@@ -134,7 +163,7 @@ const PortfolioSection = () => {
             ))}
           </AnimatePresence>
         </motion.div>
-      </div>
+      </motion.div>
 
       {/* Lightbox */}
       <AnimatePresence>
@@ -147,9 +176,10 @@ const PortfolioSection = () => {
             onClick={() => setSelectedItem(null)}
           >
             <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
+              initial={{ scale: 0.8, opacity: 0, y: 50 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.8, opacity: 0, y: 50 }}
+              transition={{ type: 'spring', stiffness: 200, damping: 25 }}
               className="relative max-w-4xl w-full"
               onClick={(e) => e.stopPropagation()}
             >
