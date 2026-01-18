@@ -1,17 +1,38 @@
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 
 const AboutSection = () => {
   const ref = useRef(null);
+  const containerRef = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
-  return (
-    <section id="about" className="section-padding bg-background relative overflow-hidden">
-      {/* Background accent */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent pointer-events-none" />
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ['start end', 'end start'],
+  });
 
-      <div className="container mx-auto max-w-4xl" ref={ref}>
+  // Parallax effects for background
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
+  const contentY = useTransform(scrollYProgress, [0, 1], [50, -50]);
+
+  return (
+    <section 
+      id="about" 
+      ref={containerRef}
+      className="section-padding bg-background relative overflow-hidden"
+    >
+      {/* Background accent with parallax */}
+      <motion.div 
+        className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent pointer-events-none"
+        style={{ y: backgroundY }}
+      />
+
+      <motion.div 
+        className="container mx-auto max-w-4xl" 
+        ref={ref}
+        style={{ y: contentY }}
+      >
         {/* Title & Description */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -44,7 +65,7 @@ const AboutSection = () => {
             From logo design to complete brand identities, I'm here to bring your vision to life.
           </p>
 
-          {/* Stats */}
+          {/* Stats with staggered reveal */}
           <div className="grid grid-cols-3 gap-6 pt-6 max-w-lg mx-auto">
             {[
               { number: '50+', label: 'Happy Clients' },
@@ -53,9 +74,9 @@ const AboutSection = () => {
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
+                initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+                transition={{ duration: 0.5, delay: 0.4 + index * 0.15 }}
                 className="text-center"
               >
                 <div className="text-2xl md:text-3xl font-heading font-bold text-gradient">
@@ -68,7 +89,7 @@ const AboutSection = () => {
             ))}
           </div>
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 };

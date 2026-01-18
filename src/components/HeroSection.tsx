@@ -1,21 +1,40 @@
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { Mail, MessageCircle, ChevronDown } from 'lucide-react';
 import FloatingShapes from './FloatingShapes';
+import { useRef } from 'react';
 
 const HeroSection = () => {
+  const ref = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start start', 'end start'],
+  });
+
+  // Parallax effects
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
+  const textY = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+
   return (
     <section
+      ref={ref}
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-dark"
     >
-      {/* Background gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-hero" />
+      {/* Background gradient overlay with parallax */}
+      <motion.div 
+        className="absolute inset-0 bg-gradient-hero" 
+        style={{ y: backgroundY }}
+      />
 
       {/* Floating 3D shapes */}
       <FloatingShapes />
 
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 md:px-8 text-center">
+      {/* Content with scroll fade */}
+      <motion.div 
+        className="relative z-10 container mx-auto px-4 md:px-8 text-center"
+        style={{ y: textY, opacity }}
+      >
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -104,7 +123,7 @@ const HeroSection = () => {
             </motion.div>
           </a>
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 };

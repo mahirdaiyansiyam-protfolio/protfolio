@@ -1,4 +1,4 @@
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import {
   Palette,
@@ -50,12 +50,28 @@ const services = [
 
 const ServicesSection = () => {
   const ref = useRef(null);
+  const containerRef = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ['start end', 'end start'],
+  });
+
+  // Parallax for background grid
+  const gridY = useTransform(scrollYProgress, [0, 1], ['0%', '20%']);
+
   return (
-    <section id="services" className="section-padding bg-card/30 relative overflow-hidden">
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-5">
+    <section 
+      id="services" 
+      ref={containerRef}
+      className="section-padding bg-card/30 relative overflow-hidden"
+    >
+      {/* Background pattern with parallax */}
+      <motion.div 
+        className="absolute inset-0 opacity-5"
+        style={{ y: gridY }}
+      >
         <div
           className="w-full h-full"
           style={{
@@ -64,7 +80,7 @@ const ServicesSection = () => {
             backgroundSize: '60px 60px',
           }}
         />
-      </div>
+      </motion.div>
 
       <div className="container mx-auto relative" ref={ref}>
         {/* Header */}
@@ -85,19 +101,24 @@ const ServicesSection = () => {
           </p>
         </motion.div>
 
-        {/* Services Grid */}
+        {/* Services Grid with staggered reveal */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              initial={{ opacity: 0, y: 50, rotateX: -15 }}
+              animate={isInView ? { opacity: 1, y: 0, rotateX: 0 } : {}}
+              transition={{ 
+                duration: 0.6, 
+                delay: index * 0.1,
+                type: 'spring',
+                stiffness: 100
+              }}
               className="group"
             >
-              <div className="h-full p-6 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all duration-300 card-3d gradient-border">
+              <div className="h-full p-6 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all duration-300 card-3d gradient-border hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/10">
                 {/* Icon */}
-                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/20 transition-colors">
+                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/20 transition-colors group-hover:scale-110 duration-300">
                   <service.icon className="w-7 h-7 text-primary" />
                 </div>
 
