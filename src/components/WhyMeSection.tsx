@@ -1,6 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Zap, Target, RefreshCw } from 'lucide-react';
+import { Zap, Target, RefreshCw, Lightbulb, Layers, MessageSquare, TrendingUp } from 'lucide-react';
 
 const reasons = [
   {
@@ -18,11 +18,31 @@ const reasons = [
     title: 'Flexibility & Revisions',
     description: 'Open to feedback with unlimited revisions until you\'re 100% satisfied.',
   },
+  {
+    icon: Lightbulb,
+    title: 'Strategy-First Approach',
+    description: 'Every project starts with understanding your goals, audience, and market position.',
+  },
+  {
+    icon: Layers,
+    title: 'Clean, Modern Execution',
+    description: 'Designs that are timeless, professional, and aligned with current trends.',
+  },
+  {
+    icon: MessageSquare,
+    title: 'Fast Communication',
+    description: 'Quick responses, clear updates, and seamless collaboration throughout.',
+  },
+  {
+    icon: TrendingUp,
+    title: 'Results-Driven Mindset',
+    description: 'We measure success by your growth, not just deliverables.',
+  },
 ];
 
 const WhyMeSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const isInView = useInView(ref, { once: false, margin: '-100px' });
 
   return (
     <section id="why" className="section-padding bg-card/30 relative overflow-hidden">
