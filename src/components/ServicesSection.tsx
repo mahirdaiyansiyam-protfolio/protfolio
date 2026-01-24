@@ -31,23 +31,23 @@ const services = [
   },
   {
     icon: CreditCard,
-    title: 'Business Cards',
-    description: 'Professional card designs that leave a lasting impression and elevate your networking.',
+    title: 'Business Card Design',
+    description: 'Clean, professional card designs that leave a strong first impression.',
   },
   {
     icon: FileText,
-    title: 'Brochures',
-    description: 'Compelling print materials that communicate your message with clarity and visual impact.',
+    title: 'Brochure Design',
+    description: 'Well-structured brochure designs that clearly communicate your message and offerings.',
   },
   {
     icon: Package,
     title: 'Packaging Design',
-    description: 'Distinctive packaging that captures attention and drives purchase decisions.',
+    description: 'Visually compelling packaging that enhances product appeal and brand value.',
   },
   {
     icon: Shirt,
-    title: 'T-Shirt Graphics',
-    description: 'Bold apparel designs that turn your brand into wearable statements.',
+    title: 'T-Shirt Graphic Design',
+    description: 'Bold and creative apparel designs made for merchandise, brands, and print-on-demand.',
   },
   {
     icon: Users,
