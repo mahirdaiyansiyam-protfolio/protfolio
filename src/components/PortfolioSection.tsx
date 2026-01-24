@@ -2,42 +2,122 @@ import { useState, useRef } from 'react';
 import { motion, useInView, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { X } from 'lucide-react';
 
-// Import portfolio images
-import logo1 from '@/assets/portfolio/logo-1.jpg';
-import logo2 from '@/assets/portfolio/logo-2.jpg';
-import logo3 from '@/assets/portfolio/logo-3.jpg';
-import social1 from '@/assets/portfolio/social-1.jpg';
-import social2 from '@/assets/portfolio/social-2.jpg';
-import thumbnail1 from '@/assets/portfolio/thumbnail-1.jpg';
-import thumbnail2 from '@/assets/portfolio/thumbnail-2.jpg';
-import card1 from '@/assets/portfolio/card-1.jpg';
-import brochure1 from '@/assets/portfolio/brochure-1.jpg';
-import packaging1 from '@/assets/portfolio/packaging-1.jpg';
-import tshirt1 from '@/assets/portfolio/tshirt-1.jpg';
+// Import portfolio images - Brand Identity
+import brandIdentity1 from '@/assets/portfolio/brand-identity-1.jpg';
+import brandIdentity2 from '@/assets/portfolio/brand-identity-2.jpg';
+import brandIdentity3 from '@/assets/portfolio/brand-identity-3.jpg';
+import brandIdentity4 from '@/assets/portfolio/brand-identity-4.jpg';
+
+// Import portfolio images - Logo Design
+import logoDesign1 from '@/assets/portfolio/logo-design-1.jpg';
+import logoDesign2 from '@/assets/portfolio/logo-design-2.jpg';
+import logoDesign3 from '@/assets/portfolio/logo-design-3.jpg';
+import logoDesign4 from '@/assets/portfolio/logo-design-4.jpg';
+
+// Import portfolio images - Social Media Management
+import socialManagement1 from '@/assets/portfolio/social-management-1.jpg';
+import socialManagement2 from '@/assets/portfolio/social-management-2.jpg';
+import socialManagement3 from '@/assets/portfolio/social-management-3.jpg';
+import socialManagement4 from '@/assets/portfolio/social-management-4.jpg';
+
+// Import portfolio images - Social Media Design
+import socialDesign1 from '@/assets/portfolio/social-design-1.jpg';
+import socialDesign2 from '@/assets/portfolio/social-design-2.jpg';
+import socialDesign3 from '@/assets/portfolio/social-design-3.jpg';
+import socialDesign4 from '@/assets/portfolio/social-design-4.jpg';
+
+// Import portfolio images - Ads Creative
+import adsCreative1 from '@/assets/portfolio/ads-creative-1.jpg';
+import adsCreative2 from '@/assets/portfolio/ads-creative-2.jpg';
+import adsCreative3 from '@/assets/portfolio/ads-creative-3.jpg';
+
+// Import portfolio images - Packaging Design
+import packagingDesign1 from '@/assets/portfolio/packaging-design-1.jpg';
+import packagingDesign2 from '@/assets/portfolio/packaging-design-2.jpg';
+import packagingDesign3 from '@/assets/portfolio/packaging-design-3.jpg';
+
+// Import portfolio images - T-Shirt Design
+import tshirtDesign1 from '@/assets/portfolio/tshirt-design-1.jpg';
+import tshirtDesign2 from '@/assets/portfolio/tshirt-design-2.jpg';
+import tshirtDesign3 from '@/assets/portfolio/tshirt-design-3.jpg';
+
+// Import portfolio images - YouTube Thumbnails
+import thumbnailDesign1 from '@/assets/portfolio/thumbnail-design-1.jpg';
+import thumbnailDesign2 from '@/assets/portfolio/thumbnail-design-2.jpg';
+
+// Import portfolio images - Business Cards
+import businessCard1 from '@/assets/portfolio/business-card-1.jpg';
+import businessCard2 from '@/assets/portfolio/business-card-2.jpg';
+
+// Import portfolio images - Brochures
+import brochureDesign1 from '@/assets/portfolio/brochure-design-1.jpg';
+import brochureDesign2 from '@/assets/portfolio/brochure-design-2.jpg';
 
 const categories = [
   'All',
+  'Brand Identity',
   'Logos',
-  'Social Media',
+  'Social Media Management',
+  'Social Media Design',
+  'Ads Creative',
+  'Packaging',
+  'T-Shirts',
   'Thumbnails',
   'Business Cards',
   'Brochures',
-  'Packaging',
-  'T-Shirts',
 ];
 
 const portfolioItems = [
-  { id: 1, category: 'Logos', image: logo1, title: 'Tech Startup Brand' },
-  { id: 2, category: 'Logos', image: logo2, title: 'Luxury Fashion Logo' },
-  { id: 3, category: 'Logos', image: logo3, title: 'Creative Agency Identity' },
-  { id: 4, category: 'Social Media', image: social1, title: 'Product Launch Campaign' },
-  { id: 5, category: 'Social Media', image: social2, title: 'Marketing Promo Design' },
-  { id: 6, category: 'Thumbnails', image: thumbnail1, title: 'Gaming Channel Thumbnail' },
-  { id: 7, category: 'Thumbnails', image: thumbnail2, title: 'Tutorial Video Cover' },
-  { id: 8, category: 'Business Cards', image: card1, title: 'Premium Business Card' },
-  { id: 9, category: 'Brochures', image: brochure1, title: 'Corporate Brochure' },
-  { id: 10, category: 'Packaging', image: packaging1, title: 'Luxury Product Box' },
-  { id: 11, category: 'T-Shirts', image: tshirt1, title: 'Urban Streetwear Design' },
+  // Brand Identity Design - 4 projects
+  { id: 1, category: 'Brand Identity', image: brandIdentity1, title: 'Corporate Stationery Suite' },
+  { id: 2, category: 'Brand Identity', image: brandIdentity2, title: 'Brand Guidelines Book' },
+  { id: 3, category: 'Brand Identity', image: brandIdentity3, title: 'Complete Identity System' },
+  { id: 4, category: 'Brand Identity', image: brandIdentity4, title: 'Brand Style Package' },
+  
+  // Logo Design - 4 projects
+  { id: 5, category: 'Logos', image: logoDesign1, title: 'Minimalist Logo Design' },
+  { id: 6, category: 'Logos', image: logoDesign2, title: 'Luxury Fashion Logo' },
+  { id: 7, category: 'Logos', image: logoDesign3, title: 'Tech Startup Brand' },
+  { id: 8, category: 'Logos', image: logoDesign4, title: 'Creative Agency Identity' },
+  
+  // Social Media Management - 4 projects
+  { id: 9, category: 'Social Media Management', image: socialManagement1, title: 'Instagram Content Strategy' },
+  { id: 10, category: 'Social Media Management', image: socialManagement2, title: 'Feed Transformation' },
+  { id: 11, category: 'Social Media Management', image: socialManagement3, title: 'Multi-Platform Campaign' },
+  { id: 12, category: 'Social Media Management', image: socialManagement4, title: 'Content Calendar System' },
+  
+  // Social Media Design - 4 projects
+  { id: 13, category: 'Social Media Design', image: socialDesign1, title: 'Product Post Design' },
+  { id: 14, category: 'Social Media Design', image: socialDesign2, title: 'Carousel Campaign' },
+  { id: 15, category: 'Social Media Design', image: socialDesign3, title: 'Story Design Template' },
+  { id: 16, category: 'Social Media Design', image: socialDesign4, title: 'LinkedIn Infographic' },
+  
+  // Ads Creative Design - 3 projects
+  { id: 17, category: 'Ads Creative', image: adsCreative1, title: 'Facebook Ad Campaign' },
+  { id: 18, category: 'Ads Creative', image: adsCreative2, title: 'Instagram Sponsored Ad' },
+  { id: 19, category: 'Ads Creative', image: adsCreative3, title: 'Digital Ad Variations' },
+  
+  // Packaging Design - 3 projects
+  { id: 20, category: 'Packaging', image: packagingDesign1, title: 'Luxury Product Box' },
+  { id: 21, category: 'Packaging', image: packagingDesign2, title: 'Coffee Bag Design' },
+  { id: 22, category: 'Packaging', image: packagingDesign3, title: 'Cosmetics Packaging' },
+  
+  // T-Shirt Graphic Design - 3 projects
+  { id: 23, category: 'T-Shirts', image: tshirtDesign1, title: 'Urban Streetwear Design' },
+  { id: 24, category: 'T-Shirts', image: tshirtDesign2, title: 'Vintage Band Graphic' },
+  { id: 25, category: 'T-Shirts', image: tshirtDesign3, title: 'Minimal Geometric Tee' },
+  
+  // YouTube Thumbnails - 2 projects
+  { id: 26, category: 'Thumbnails', image: thumbnailDesign1, title: 'Gaming Channel Thumbnail' },
+  { id: 27, category: 'Thumbnails', image: thumbnailDesign2, title: 'Tutorial Video Cover' },
+  
+  // Business Card Design - 2 projects
+  { id: 28, category: 'Business Cards', image: businessCard1, title: 'Minimal Corporate Card' },
+  { id: 29, category: 'Business Cards', image: businessCard2, title: 'Premium Luxury Card' },
+  
+  // Brochure Design - 2 projects
+  { id: 30, category: 'Brochures', image: brochureDesign1, title: 'Corporate Tri-Fold' },
+  { id: 31, category: 'Brochures', image: brochureDesign2, title: 'Company Profile Brochure' },
 ];
 
 const PortfolioSection = () => {
