@@ -25,19 +25,29 @@ const services = [
     description: 'Strategic logo designs that define your brand identity and create lasting recognition.',
   },
   {
-    icon: Image,
-    title: 'Social Media Design',
-    description: 'Scroll-stopping visuals designed to boost engagement and strengthen your online presence.',
-  },
-  {
     icon: Users,
     title: 'Social Media Management',
     description: 'Strategic social media management focused on consistent growth, engagement, and brand presence.',
   },
   {
+    icon: Image,
+    title: 'Social Media Design',
+    description: 'Scroll-stopping visuals designed to boost engagement and strengthen your online presence.',
+  },
+  {
     icon: Megaphone,
     title: 'Ads Creative Design',
     description: 'High-converting ad creatives designed to drive attention, clicks, and campaign performance.',
+  },
+  {
+    icon: Package,
+    title: 'Packaging Design',
+    description: 'Visually compelling packaging that enhances product appeal and brand value.',
+  },
+  {
+    icon: Shirt,
+    title: 'T-Shirt Graphic Design',
+    description: 'Bold and creative apparel designs made for merchandise, brands, and print-on-demand.',
   },
   {
     icon: Play,
@@ -53,16 +63,6 @@ const services = [
     icon: FileText,
     title: 'Brochure Design',
     description: 'Well-structured brochure designs that clearly communicate your message and offerings.',
-  },
-  {
-    icon: Package,
-    title: 'Packaging Design',
-    description: 'Visually compelling packaging that enhances product appeal and brand value.',
-  },
-  {
-    icon: Shirt,
-    title: 'T-Shirt Graphic Design',
-    description: 'Bold and creative apparel designs made for merchandise, brands, and print-on-demand.',
   },
 ];
 
