@@ -27,7 +27,7 @@ const services = [
   {
     icon: Play,
     title: 'YouTube Thumbnails',
-    description: 'Click-worthy thumbnails crafted to maximize views and accelerate channel growth.',
+    description: 'High-impact thumbnails engineered to increase clicks, views, and channel growth.',
   },
   {
     icon: CreditCard,
