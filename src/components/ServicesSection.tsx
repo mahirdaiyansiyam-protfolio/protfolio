@@ -15,6 +15,11 @@ import {
 
 const services = [
   {
+    icon: Fingerprint,
+    title: 'Brand Identity Design',
+    description: 'Complete brand identity systems that ensure visual consistency and strong brand recognition.',
+  },
+  {
     icon: Palette,
     title: 'Logo Design',
     description: 'Strategic logo designs that define your brand identity and create lasting recognition.',
@@ -23,6 +28,16 @@ const services = [
     icon: Image,
     title: 'Social Media Design',
     description: 'Scroll-stopping visuals designed to boost engagement and strengthen your online presence.',
+  },
+  {
+    icon: Users,
+    title: 'Social Media Management',
+    description: 'Strategic social media management focused on consistent growth, engagement, and brand presence.',
+  },
+  {
+    icon: Megaphone,
+    title: 'Ads Creative Design',
+    description: 'High-converting ad creatives designed to drive attention, clicks, and campaign performance.',
   },
   {
     icon: Play,
@@ -48,21 +63,6 @@ const services = [
     icon: Shirt,
     title: 'T-Shirt Graphic Design',
     description: 'Bold and creative apparel designs made for merchandise, brands, and print-on-demand.',
-  },
-  {
-    icon: Users,
-    title: 'Social Media Management',
-    description: 'Strategic social media management focused on consistent growth, engagement, and brand presence.',
-  },
-  {
-    icon: Fingerprint,
-    title: 'Brand Identity Design',
-    description: 'Complete brand identity systems that ensure visual consistency and strong brand recognition.',
-  },
-  {
-    icon: Megaphone,
-    title: 'Ads Creative Design',
-    description: 'High-converting ad creatives designed to drive attention, clicks, and campaign performance.',
   },
 ];
 
