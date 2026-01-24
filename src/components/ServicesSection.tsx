@@ -8,43 +8,61 @@ import {
   FileText,
   Package,
   Shirt,
+  Users,
+  Fingerprint,
+  Megaphone,
 } from 'lucide-react';
 
 const services = [
   {
     icon: Palette,
     title: 'Logo Design',
-    description: 'Memorable logos that capture your brand essence and make lasting impressions.',
+    description: 'Strategic logo designs that define your brand identity and create lasting recognition.',
   },
   {
     icon: Image,
-    title: 'Social Media Posts',
-    description: 'Engaging visual content optimized for maximum impact across all platforms.',
+    title: 'Social Media Design',
+    description: 'Scroll-stopping visuals designed to boost engagement and strengthen your online presence.',
   },
   {
     icon: Play,
     title: 'YouTube Thumbnails',
-    description: 'Click-worthy thumbnails that boost views and channel growth.',
+    description: 'Click-worthy thumbnails crafted to maximize views and accelerate channel growth.',
   },
   {
     icon: CreditCard,
     title: 'Business Cards',
-    description: 'Professional card designs that make networking memorable.',
+    description: 'Professional card designs that leave a lasting impression and elevate your networking.',
   },
   {
     icon: FileText,
     title: 'Brochures',
-    description: 'Informative and visually stunning print materials for your business.',
+    description: 'Compelling print materials that communicate your message with clarity and visual impact.',
   },
   {
     icon: Package,
     title: 'Packaging Design',
-    description: 'Eye-catching packaging that stands out on shelves and online.',
+    description: 'Distinctive packaging that captures attention and drives purchase decisions.',
   },
   {
     icon: Shirt,
     title: 'T-Shirt Graphics',
-    description: 'Creative apparel designs for merchandise and brand promotion.',
+    description: 'Bold apparel designs that turn your brand into wearable statements.',
+  },
+  {
+    icon: Users,
+    title: 'Social Media Management',
+    description: 'Strategic social media management focused on consistent growth, engagement, and brand presence.',
+  },
+  {
+    icon: Fingerprint,
+    title: 'Brand Identity Design',
+    description: 'Complete brand identity systems that ensure visual consistency and strong brand recognition.',
+  },
+  {
+    icon: Megaphone,
+    title: 'Ads Creative Design',
+    description: 'High-converting ad creatives designed to drive attention, clicks, and campaign performance.',
   },
 ];
 
