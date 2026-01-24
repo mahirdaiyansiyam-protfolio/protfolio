@@ -8,8 +8,11 @@ import PortfolioSection from '@/components/PortfolioSection';
 import WhyMeSection from '@/components/WhyMeSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
+import useSmoothScroll from '@/hooks/useSmoothScroll';
 
 const Index = () => {
+  useSmoothScroll();
+
   return (
     <main className="relative">
       {/* Custom cursor effect */}
