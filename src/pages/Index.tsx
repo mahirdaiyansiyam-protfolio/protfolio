@@ -9,6 +9,7 @@ import WhyMeSection from '@/components/WhyMeSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import useSmoothScroll from '@/hooks/useSmoothScroll';
+import RevealOnScroll from '@/components/RevealOnScroll';
 
 const Index = () => {
   useSmoothScroll();
@@ -21,15 +22,36 @@ const Index = () => {
       {/* Navigation */}
       <Navbar />
 
-      {/* Main sections */}
+      {/* Main sections with scroll-triggered reveals */}
       <HeroSection />
-      <AboutSection />
-      <ServicesSection />
-      <SkillsSection />
-      <PortfolioSection />
-      <WhyMeSection />
-      <ContactSection />
-      <Footer />
+      
+      <RevealOnScroll variant="fadeUp">
+        <AboutSection />
+      </RevealOnScroll>
+      
+      <RevealOnScroll variant="fadeUp" delay={0.1}>
+        <ServicesSection />
+      </RevealOnScroll>
+      
+      <RevealOnScroll variant="scale">
+        <SkillsSection />
+      </RevealOnScroll>
+      
+      <RevealOnScroll variant="fadeUp">
+        <PortfolioSection />
+      </RevealOnScroll>
+      
+      <RevealOnScroll variant="blur">
+        <WhyMeSection />
+      </RevealOnScroll>
+      
+      <RevealOnScroll variant="fadeUp">
+        <ContactSection />
+      </RevealOnScroll>
+      
+      <RevealOnScroll variant="fadeUp" delay={0.1}>
+        <Footer />
+      </RevealOnScroll>
     </main>
   );
 };
