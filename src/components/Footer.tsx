@@ -22,8 +22,8 @@ const Footer = () => {
             viewport={{ once: true }}
             className="text-center md:text-left"
           >
-            <a href="#hero" className="text-2xl font-heading font-bold text-gradient">
-              MDS
+            <a href="#hero" className="text-xl font-heading font-bold text-gradient">
+              MDIS Creative Labs
             </a>
             <p className="mt-2 text-sm text-muted-foreground flex items-center justify-center md:justify-start gap-1">
               © {currentYear} Mahir Daiyan Siyam. Made with
