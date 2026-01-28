@@ -40,6 +40,7 @@ import packagingDesign3 from '@/assets/portfolio/packaging-design-3.jpg';
 import tshirtDesign1 from '@/assets/portfolio/tshirt-design-1.jpg';
 import tshirtDesign2 from '@/assets/portfolio/tshirt-design-2.jpg';
 import tshirtDesign3 from '@/assets/portfolio/tshirt-design-3.jpg';
+import tshirtDesign4 from '@/assets/portfolio/tshirt-design-4.jpg';
 
 // Import portfolio images - YouTube Thumbnails
 import thumbnailDesign1 from '@/assets/portfolio/thumbnail-design-1.jpg';
@@ -102,10 +103,11 @@ const portfolioItems = [
   { id: 21, category: 'Packaging', image: packagingDesign2, title: 'Coffee Bag Design' },
   { id: 22, category: 'Packaging', image: packagingDesign3, title: 'Cosmetics Packaging' },
   
-  // T-Shirt Graphic Design - 3 projects
+  // T-Shirt Graphic Design - 4 projects
   { id: 23, category: 'T-Shirts', image: tshirtDesign1, title: 'Urban Streetwear Design' },
   { id: 24, category: 'T-Shirts', image: tshirtDesign2, title: 'Vintage Band Graphic' },
   { id: 25, category: 'T-Shirts', image: tshirtDesign3, title: 'Minimal Geometric Tee' },
+  { id: 32, category: 'T-Shirts', image: tshirtDesign4, title: 'Think Faster Than Fear' },
   
   // YouTube Thumbnails - 2 projects
   { id: 26, category: 'Thumbnails', image: thumbnailDesign1, title: 'Gaming Channel Thumbnail' },
