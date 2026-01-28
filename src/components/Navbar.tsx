@@ -39,11 +39,8 @@ const Navbar = () => {
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
             <a href="#hero" className="flex items-center gap-2 group">
-              <span className="text-xl md:text-2xl font-heading font-bold text-gradient">
-                MDS
-              </span>
-              <span className="hidden sm:block text-sm text-muted-foreground group-hover:text-primary transition-colors">
-                Design Studio
+              <span className="text-lg md:text-xl font-heading font-bold text-gradient">
+                MDIS Creative Labs
               </span>
             </a>
 
