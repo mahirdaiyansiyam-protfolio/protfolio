@@ -2,10 +2,9 @@ import { motion } from 'framer-motion';
 import { Instagram, Facebook, Linkedin, Twitter, Heart } from 'lucide-react';
 
 const socialLinks = [
-  { icon: Instagram, href: '#', label: 'Instagram' },
-  { icon: Facebook, href: '#', label: 'Facebook' },
-  { icon: Linkedin, href: '#', label: 'LinkedIn' },
-  { icon: Twitter, href: '#', label: 'Twitter' },
+  { icon: Instagram, href: 'https://instagram.com/mohummad.mahir', label: 'Instagram' },
+  { icon: Facebook, href: 'https://www.facebook.com/Mdiscretivelabs', label: 'Facebook' },
+  { icon: Linkedin, href: 'https://www.linkedin.com/in/mahir-daiyan-siyam13', label: 'LinkedIn' },
 ];
 
 const Footer = () => {
