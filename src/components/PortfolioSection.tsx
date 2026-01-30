@@ -31,6 +31,7 @@ import adsCreative1 from '@/assets/portfolio/ads-creative-1.jpg';
 import adsCreative2 from '@/assets/portfolio/ads-creative-2.jpg';
 import adsCreative3 from '@/assets/portfolio/ads-creative-3.jpg';
 import adsCreative4 from '@/assets/portfolio/ads-creative-4.jpg';
+import adsCreative5 from '@/assets/portfolio/ads-creative-5.jpg';
 
 // Import portfolio images - Packaging Design
 import packagingDesign1 from '@/assets/portfolio/packaging-design-1.jpg';
@@ -94,11 +95,12 @@ const portfolioItems = [
   { id: 15, category: 'Social Media Design', image: socialDesign3, title: 'Story Design Template' },
   { id: 16, category: 'Social Media Design', image: socialDesign4, title: 'LinkedIn Infographic' },
   
-  // Ads Creative Design - 4 projects
+  // Ads Creative Design - 5 projects
   { id: 17, category: 'Ads Creative', image: adsCreative1, title: 'Facebook Ad Campaign' },
   { id: 18, category: 'Ads Creative', image: adsCreative2, title: 'Instagram Sponsored Ad' },
   { id: 19, category: 'Ads Creative', image: adsCreative3, title: 'Digital Ad Variations' },
   { id: 33, category: 'Ads Creative', image: adsCreative4, title: 'The Flame Grill - Burger Promotional Campaign' },
+  { id: 34, category: 'Ads Creative', image: adsCreative5, title: 'Premium Wireless Earbuds - Product Launch Campaign' },
   
   // Packaging Design - 3 projects
   { id: 20, category: 'Packaging', image: packagingDesign1, title: 'Luxury Product Box' },
