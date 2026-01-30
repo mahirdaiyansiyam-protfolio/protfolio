@@ -25,6 +25,7 @@ import socialDesign1 from '@/assets/portfolio/social-design-1.jpg';
 import socialDesign2 from '@/assets/portfolio/social-design-2.jpg';
 import socialDesign3 from '@/assets/portfolio/social-design-3.jpg';
 import socialDesign4 from '@/assets/portfolio/social-design-4.jpg';
+import socialDesign5 from '@/assets/portfolio/social-design-5.jpg';
 
 // Import portfolio images - Ads Creative
 import adsCreative1 from '@/assets/portfolio/ads-creative-1.jpg';
@@ -89,11 +90,12 @@ const portfolioItems = [
   { id: 11, category: 'Social Media Management', image: socialManagement3, title: 'Multi-Platform Campaign' },
   { id: 12, category: 'Social Media Management', image: socialManagement4, title: 'Content Calendar System' },
   
-  // Social Media Design - 4 projects
+  // Social Media Design - 5 projects
   { id: 13, category: 'Social Media Design', image: socialDesign1, title: 'Product Post Design' },
   { id: 14, category: 'Social Media Design', image: socialDesign2, title: 'Carousel Campaign' },
   { id: 15, category: 'Social Media Design', image: socialDesign3, title: 'Story Design Template' },
   { id: 16, category: 'Social Media Design', image: socialDesign4, title: 'LinkedIn Infographic' },
+  { id: 35, category: 'Social Media Design', image: socialDesign5, title: 'Glowfe Skincare - The New Glow Standard Campaign' },
   
   // Ads Creative Design - 5 projects
   { id: 17, category: 'Ads Creative', image: adsCreative1, title: 'Facebook Ad Campaign' },
