@@ -28,9 +28,6 @@ import socialDesign4 from '@/assets/portfolio/social-design-4.jpg';
 import socialDesign5 from '@/assets/portfolio/social-design-5.jpg';
 
 // Import portfolio images - Ads Creative
-import adsCreative1 from '@/assets/portfolio/ads-creative-1.jpg';
-import adsCreative2 from '@/assets/portfolio/ads-creative-2.jpg';
-import adsCreative3 from '@/assets/portfolio/ads-creative-3.jpg';
 import adsCreative4 from '@/assets/portfolio/ads-creative-4.jpg';
 import adsCreative5 from '@/assets/portfolio/ads-creative-5.jpg';
 
@@ -97,10 +94,7 @@ const portfolioItems = [
   { id: 16, category: 'Social Media Design', image: socialDesign4, title: 'LinkedIn Infographic' },
   { id: 35, category: 'Social Media Design', image: socialDesign5, title: 'Glowfe Skincare - The New Glow Standard Campaign' },
   
-  // Ads Creative Design - 5 projects
-  { id: 17, category: 'Ads Creative', image: adsCreative1, title: 'Facebook Ad Campaign' },
-  { id: 18, category: 'Ads Creative', image: adsCreative2, title: 'Instagram Sponsored Ad' },
-  { id: 19, category: 'Ads Creative', image: adsCreative3, title: 'Digital Ad Variations' },
+  // Ads Creative Design - 2 projects
   { id: 33, category: 'Ads Creative', image: adsCreative4, title: 'The Flame Grill - Burger Promotional Campaign' },
   { id: 34, category: 'Ads Creative', image: adsCreative5, title: 'Premium Wireless Earbuds - Product Launch Campaign' },
   
