@@ -34,6 +34,7 @@ import adsCreative6 from '@/assets/portfolio/ads-creative-6.jpg';
 import adsCreative7 from '@/assets/portfolio/ads-creative-7.jpg';
 import adsCreative8 from '@/assets/portfolio/ads-creative-8.jpg';
 import adsCreative9 from '@/assets/portfolio/ads-creative-9.jpg';
+import adsCreative10 from '@/assets/portfolio/ads-creative-10.jpg';
 
 // Import portfolio images - Packaging Design
 import packagingDesign1 from '@/assets/portfolio/packaging-design-1.jpg';
@@ -98,13 +99,14 @@ const portfolioItems = [
   { id: 16, category: 'Social Media Design', image: socialDesign4, title: 'LinkedIn Infographic' },
   { id: 35, category: 'Social Media Design', image: socialDesign5, title: 'Glowfe Skincare - The New Glow Standard Campaign' },
   
-  // Ads Creative Design - 6 projects
+  // Ads Creative Design - 7 projects
   { id: 33, category: 'Ads Creative', image: adsCreative4, title: 'The Flame Grill - Burger Promotional Campaign' },
   { id: 34, category: 'Ads Creative', image: adsCreative5, title: 'Premium Wireless Earbuds - Product Launch Campaign' },
   { id: 36, category: 'Ads Creative', image: adsCreative6, title: 'Farm Fresh Meal Kit - From Box to Table Campaign' },
   { id: 37, category: 'Ads Creative', image: adsCreative7, title: 'Pumpkin Spice Oat Latte - Fall Limited Edition' },
   { id: 38, category: 'Ads Creative', image: adsCreative8, title: 'Amazfit GTS 4 - NEW ARRIVAL Smartwatch Launch' },
   { id: 39, category: 'Ads Creative', image: adsCreative9, title: 'Pro Gaming Headset - Tournament Grade' },
+  { id: 40, category: 'Ads Creative', image: adsCreative10, title: 'Smart Security Camera - Family Protection System' },
   
   // Packaging Design - 3 projects
   { id: 20, category: 'Packaging', image: packagingDesign1, title: 'Luxury Product Box' },
