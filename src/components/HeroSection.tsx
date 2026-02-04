@@ -2,6 +2,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { Mail, MessageCircle, ChevronDown } from 'lucide-react';
 import FloatingShapes from './FloatingShapes';
 import { useRef, useState, useEffect } from 'react';
+import mdisLogo from '@/assets/mdis-logo.jpg';
 
 const HeroSection = () => {
   const ref = useRef<HTMLElement>(null);
@@ -45,6 +46,10 @@ const HeroSection = () => {
   const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
   const textY = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  
+  // Hero logo animation - scale and opacity based on scroll
+  const logoScale = useTransform(scrollYProgress, [0, 0.15], [1, 0]);
+  const logoOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 0]);
 
   return (
     <section
@@ -61,9 +66,24 @@ const HeroSection = () => {
       {/* Floating 3D shapes */}
       <FloatingShapes />
 
+      {/* Large Centered Logo */}
+      <motion.div
+        className="absolute top-24 md:top-32 left-1/2 -translate-x-1/2 z-20"
+        style={{ 
+          scale: logoScale,
+          opacity: logoOpacity 
+        }}
+      >
+        <img 
+          src={mdisLogo} 
+          alt="MDIS Creative Labs Logo" 
+          className="w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 object-contain rounded-lg"
+        />
+      </motion.div>
+
       {/* Content with scroll fade */}
       <motion.div 
-        className="relative z-10 container mx-auto px-4 md:px-8 text-center"
+        className="relative z-10 container mx-auto px-4 md:px-8 text-center pt-32 md:pt-40"
         style={{ y: textY, opacity }}
       >
         <motion.div

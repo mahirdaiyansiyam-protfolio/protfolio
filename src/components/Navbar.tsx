@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import mdisLogo from '@/assets/mdis-logo.jpg';
 
 const navLinks = [
   { href: '#hero', label: 'Home' },
@@ -14,6 +15,12 @@ const navLinks = [
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  
+  const { scrollY } = useScroll();
+  
+  // Logo animation - appears in navbar after scrolling past hero
+  const logoOpacity = useTransform(scrollY, [50, 150], [0, 1]);
+  const logoScale = useTransform(scrollY, [50, 150], [0.8, 1]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,12 +46,28 @@ const Navbar = () => {
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
             <a href="#hero" className="flex items-center gap-2 group">
-              <span className="text-xl md:text-2xl font-heading font-bold text-primary">
-                MDIS
-              </span>
-              <span className="text-xl md:text-2xl font-heading font-bold text-foreground">
-                Creative Labs
-              </span>
+              <motion.img 
+                src={mdisLogo} 
+                alt="MDIS Creative Labs Logo" 
+                className="h-10 md:h-12 w-auto object-contain rounded"
+                style={{ 
+                  opacity: logoOpacity,
+                  scale: logoScale
+                }}
+              />
+              <motion.div 
+                className="flex items-center gap-1"
+                style={{ 
+                  opacity: logoOpacity
+                }}
+              >
+                <span className="text-lg md:text-xl font-heading font-bold text-primary">
+                  MDIS
+                </span>
+                <span className="text-lg md:text-xl font-heading font-bold text-foreground">
+                  Creative Labs
+                </span>
+              </motion.div>
             </a>
 
             {/* Desktop Navigation */}
