@@ -2,54 +2,11 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { Mail, MessageCircle, ChevronDown } from 'lucide-react';
 import FloatingShapes from './FloatingShapes';
 import { useRef, useState, useEffect } from 'react';
-import mdisLogo from '@/assets/mdis-logo.jpg';
-
-const HeroSection = () => {
-  const ref = useRef<HTMLElement>(null);
-  const [displayText, setDisplayText] = useState('');
-  const [isDeleting, setIsDeleting] = useState(false);
-  const fullText = 'Siyam';
-
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ['start start', 'end start'],
-  });
-
-  // Typing animation effect
-  useEffect(() => {
-    const typingSpeed = 150;
-    const deletingSpeed = 100;
-    const pauseTime = 2000;
-
-    const handleTyping = () => {
-      if (!isDeleting) {
-        if (displayText.length < fullText.length) {
-          setDisplayText(fullText.slice(0, displayText.length + 1));
-        } else {
-          setTimeout(() => setIsDeleting(true), pauseTime);
-          return;
-        }
-      } else {
-        if (displayText.length > 0) {
-          setDisplayText(fullText.slice(0, displayText.length - 1));
-        } else {
-          setIsDeleting(false);
-        }
-      }
-    };
-
-    const timer = setTimeout(handleTyping, isDeleting ? deletingSpeed : typingSpeed);
-    return () => clearTimeout(timer);
-  }, [displayText, isDeleting]);
 
   // Parallax effects
   const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
   const textY = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
-  
-  // Hero logo animation - scale and opacity based on scroll
-  const logoScale = useTransform(scrollYProgress, [0, 0.15], [1, 0]);
-  const logoOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 0]);
 
   return (
     <section
