@@ -3,6 +3,44 @@ import { Mail, MessageCircle, ChevronDown } from 'lucide-react';
 import FloatingShapes from './FloatingShapes';
 import { useRef, useState, useEffect } from 'react';
 
+const HeroSection = () => {
+  const ref = useRef<HTMLElement>(null);
+  const [displayText, setDisplayText] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+  const fullText = 'Siyam';
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start start', 'end start'],
+  });
+
+  // Typing animation effect
+  useEffect(() => {
+    const typingSpeed = 150;
+    const deletingSpeed = 100;
+    const pauseTime = 2000;
+
+    const handleTyping = () => {
+      if (!isDeleting) {
+        if (displayText.length < fullText.length) {
+          setDisplayText(fullText.slice(0, displayText.length + 1));
+        } else {
+          setTimeout(() => setIsDeleting(true), pauseTime);
+          return;
+        }
+      } else {
+        if (displayText.length > 0) {
+          setDisplayText(fullText.slice(0, displayText.length - 1));
+        } else {
+          setIsDeleting(false);
+        }
+      }
+    };
+
+    const timer = setTimeout(handleTyping, isDeleting ? deletingSpeed : typingSpeed);
+    return () => clearTimeout(timer);
+  }, [displayText, isDeleting]);
+
   // Parallax effects
   const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
   const textY = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
