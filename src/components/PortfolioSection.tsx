@@ -121,6 +121,7 @@ const portfolioItems = [
   { id: 24, category: 'T-Shirts', image: tshirtDesign2, title: 'Vintage Band Graphic' },
   { id: 25, category: 'T-Shirts', image: tshirtDesign3, title: 'Minimal Geometric Tee' },
   { id: 32, category: 'T-Shirts', image: tshirtDesign4, title: 'Think Faster Than Fear' },
+  { id: 42, category: 'T-Shirts', image: tshirtDesign5, title: 'Fitness Motivation - T-Shirt Design Collection' },
   
   // YouTube Thumbnails - 2 projects
   { id: 26, category: 'Thumbnails', image: thumbnailDesign1, title: 'Gaming Channel Thumbnail' },
