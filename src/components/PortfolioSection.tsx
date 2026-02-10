@@ -92,6 +92,7 @@ const portfolioItems = [
   { id: 10, category: 'Social Media Management', image: socialManagement2, title: 'Feed Transformation' },
   { id: 11, category: 'Social Media Management', image: socialManagement3, title: 'Multi-Platform Campaign' },
   { id: 12, category: 'Social Media Management', image: socialManagement4, title: 'Content Calendar System' },
+  { id: 41, category: 'Social Media Management', image: socialManagement5, title: 'Artisan Bakery Social Media Management Dashboard' },
   
   // Social Media Design - 5 projects
   { id: 13, category: 'Social Media Design', image: socialDesign1, title: 'Product Post Design' },
