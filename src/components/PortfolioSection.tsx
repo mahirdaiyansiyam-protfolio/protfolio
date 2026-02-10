@@ -47,6 +47,7 @@ import tshirtDesign1 from '@/assets/portfolio/tshirt-design-1.jpg';
 import tshirtDesign2 from '@/assets/portfolio/tshirt-design-2.jpg';
 import tshirtDesign3 from '@/assets/portfolio/tshirt-design-3.jpg';
 import tshirtDesign4 from '@/assets/portfolio/tshirt-design-4.jpg';
+import tshirtDesign5 from '@/assets/portfolio/tshirt-design-5.jpg';
 
 // Import portfolio images - YouTube Thumbnails
 import thumbnailDesign1 from '@/assets/portfolio/thumbnail-design-1.jpg';
