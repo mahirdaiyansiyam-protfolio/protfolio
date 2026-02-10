@@ -14,12 +14,6 @@ const navLinks = [
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  
-  const { scrollY } = useScroll();
-  
-  // Logo animation - appears in navbar after scrolling past hero
-  const logoOpacity = useTransform(scrollY, [50, 150], [0, 1]);
-  const logoScale = useTransform(scrollY, [50, 150], [0.8, 1]);
 
   useEffect(() => {
     const handleScroll = () => {
