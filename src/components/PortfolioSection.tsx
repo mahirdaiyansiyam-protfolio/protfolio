@@ -19,6 +19,7 @@ import socialManagement1 from '@/assets/portfolio/social-management-1.jpg';
 import socialManagement2 from '@/assets/portfolio/social-management-2.jpg';
 import socialManagement3 from '@/assets/portfolio/social-management-3.jpg';
 import socialManagement4 from '@/assets/portfolio/social-management-4.jpg';
+import socialManagement5 from '@/assets/portfolio/social-management-5.jpg';
 
 // Import portfolio images - Social Media Design
 import socialDesign1 from '@/assets/portfolio/social-design-1.jpg';
