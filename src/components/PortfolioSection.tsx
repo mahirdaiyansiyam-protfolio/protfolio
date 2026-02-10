@@ -231,6 +231,8 @@ const PortfolioSection = () => {
                 <motion.img
                   src={item.image}
                   alt={item.title}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover"
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.6 }}
