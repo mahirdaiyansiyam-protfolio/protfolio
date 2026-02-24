@@ -27,6 +27,7 @@ import socialDesign2 from '@/assets/portfolio/social-design-2.jpg';
 import socialDesign3 from '@/assets/portfolio/social-design-3.jpg';
 import socialDesign4 from '@/assets/portfolio/social-design-4.jpg';
 import socialDesign5 from '@/assets/portfolio/social-design-5.jpg';
+import socialDesign6 from '@/assets/portfolio/social-design-6.jpg';
 
 // Import portfolio images - Ads Creative
 import adsCreative4 from '@/assets/portfolio/ads-creative-4.jpg';
@@ -101,6 +102,7 @@ const portfolioItems = [
   { id: 15, category: 'Social Media Design', image: socialDesign3, title: 'Story Design Template' },
   { id: 16, category: 'Social Media Design', image: socialDesign4, title: 'LinkedIn Infographic' },
   { id: 35, category: 'Social Media Design', image: socialDesign5, title: 'Glowfe Skincare - The New Glow Standard Campaign' },
+  { id: 43, category: 'Social Media Design', image: socialDesign6, title: 'Stylish Hoodie For Men' },
   
   // Ads Creative Design - 7 projects
   { id: 33, category: 'Ads Creative', image: adsCreative4, title: 'The Flame Grill - Burger Promotional Campaign' },
