@@ -70,7 +70,7 @@ const AboutSection = () => {
             {[
               { number: '50+', label: 'Happy Clients' },
               { number: '200+', label: 'Projects Done' },
-              { number: '3+', label: 'Years Experience' },
+              { number: '2+', label: 'Years Experience' },
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}
