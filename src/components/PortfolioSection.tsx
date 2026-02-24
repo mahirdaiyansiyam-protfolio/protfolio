@@ -7,6 +7,7 @@ import brandIdentity1 from '@/assets/portfolio/brand-identity-1.jpg';
 import brandIdentity2 from '@/assets/portfolio/brand-identity-2.jpg';
 import brandIdentity3 from '@/assets/portfolio/brand-identity-3.jpg';
 import brandIdentity4 from '@/assets/portfolio/brand-identity-4.jpg';
+import brandIdentity5 from '@/assets/portfolio/brand-identity-5.jpg';
 
 // Import portfolio images - Logo Design
 import logoDesign1 from '@/assets/portfolio/logo-design-1.jpg';
@@ -78,6 +79,7 @@ const portfolioItems = [
   { id: 2, category: 'Brand Identity', image: brandIdentity2, title: 'Brand Guidelines Book' },
   { id: 3, category: 'Brand Identity', image: brandIdentity3, title: 'Complete Identity System' },
   { id: 4, category: 'Brand Identity', image: brandIdentity4, title: 'Brand Style Package' },
+  { id: 44, category: 'Brand Identity', image: brandIdentity5, title: 'APEX Fitness - Complete Brand Identity System' },
   
   // Logo Design - 4 projects
   { id: 5, category: 'Logos', image: logoDesign1, title: 'Minimalist Logo Design' },
