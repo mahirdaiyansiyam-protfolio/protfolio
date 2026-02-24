@@ -22,10 +22,6 @@ import socialManagement4 from '@/assets/portfolio/social-management-4.jpg';
 import socialManagement5 from '@/assets/portfolio/social-management-5.jpg';
 
 // Import portfolio images - Social Media Design
-import socialDesign1 from '@/assets/portfolio/social-design-1.jpg';
-import socialDesign2 from '@/assets/portfolio/social-design-2.jpg';
-import socialDesign3 from '@/assets/portfolio/social-design-3.jpg';
-import socialDesign4 from '@/assets/portfolio/social-design-4.jpg';
 import socialDesign5 from '@/assets/portfolio/social-design-5.jpg';
 import socialDesign6 from '@/assets/portfolio/social-design-6.jpg';
 
@@ -96,11 +92,7 @@ const portfolioItems = [
   { id: 12, category: 'Social Media Management', image: socialManagement4, title: 'Content Calendar System' },
   { id: 41, category: 'Social Media Management', image: socialManagement5, title: 'Artisan Bakery Social Media Management Dashboard' },
   
-  // Social Media Design - 5 projects
-  { id: 13, category: 'Social Media Design', image: socialDesign1, title: 'Product Post Design' },
-  { id: 14, category: 'Social Media Design', image: socialDesign2, title: 'Carousel Campaign' },
-  { id: 15, category: 'Social Media Design', image: socialDesign3, title: 'Story Design Template' },
-  { id: 16, category: 'Social Media Design', image: socialDesign4, title: 'LinkedIn Infographic' },
+  // Social Media Design
   { id: 35, category: 'Social Media Design', image: socialDesign5, title: 'Glowfe Skincare - The New Glow Standard Campaign' },
   { id: 43, category: 'Social Media Design', image: socialDesign6, title: 'Stylish Hoodie For Men' },
   
