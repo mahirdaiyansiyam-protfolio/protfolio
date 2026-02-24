@@ -26,6 +26,7 @@ import socialManagement5 from '@/assets/portfolio/social-management-5.jpg';
 // Import portfolio images - Social Media Design
 import socialDesign5 from '@/assets/portfolio/social-design-5.jpg';
 import socialDesign6 from '@/assets/portfolio/social-design-6.jpg';
+import socialDesign7 from '@/assets/portfolio/social-design-7.jpg';
 
 // Import portfolio images - Ads Creative
 import adsCreative4 from '@/assets/portfolio/ads-creative-4.jpg';
@@ -99,6 +100,7 @@ const portfolioItems = [
   // Social Media Design
   { id: 35, category: 'Social Media Design', image: socialDesign5, title: 'Glowfe Skincare - The New Glow Standard Campaign' },
   { id: 43, category: 'Social Media Design', image: socialDesign6, title: 'Stylish Hoodie For Men' },
+  { id: 46, category: 'Social Media Design', image: socialDesign7, title: 'Summer Special Sale' },
   
   // Ads Creative Design - 7 projects
   { id: 33, category: 'Ads Creative', image: adsCreative4, title: 'The Flame Grill - Burger Promotional Campaign' },
