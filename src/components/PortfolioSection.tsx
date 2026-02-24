@@ -117,7 +117,7 @@ const portfolioItems = [
   // T-Shirt Graphic Design - 4 projects
   { id: 23, category: 'T-Shirts', image: tshirtDesign1, title: 'Urban Streetwear Design' },
   { id: 24, category: 'T-Shirts', image: tshirtDesign2, title: 'Vintage Band Graphic' },
-  { id: 25, category: 'T-Shirts', image: tshirtDesign3, title: 'Minimal Geometric Tee' },
+  
   { id: 32, category: 'T-Shirts', image: tshirtDesign4, title: 'Think Faster Than Fear' },
   { id: 42, category: 'T-Shirts', image: tshirtDesign5, title: 'Fitness Motivation - T-Shirt Design Collection' },
   
