@@ -10,10 +10,7 @@ import brandIdentity4 from '@/assets/portfolio/brand-identity-4.jpg';
 import brandIdentity5 from '@/assets/portfolio/brand-identity-5.jpg';
 
 // Import portfolio images - Logo Design
-import logoDesign1 from '@/assets/portfolio/logo-design-1.jpg';
 import logoDesign2 from '@/assets/portfolio/logo-design-2.jpg';
-import logoDesign3 from '@/assets/portfolio/logo-design-3.jpg';
-import logoDesign4 from '@/assets/portfolio/logo-design-4.jpg';
 import logoDesign5 from '@/assets/portfolio/logo-design-5.jpg';
 
 // Import portfolio images - Social Media Management
@@ -84,10 +81,7 @@ const portfolioItems = [
   { id: 44, category: 'Brand Identity', image: brandIdentity5, title: 'APEX Fitness - Complete Brand Identity System' },
   
   // Logo Design - 4 projects
-  { id: 5, category: 'Logos', image: logoDesign1, title: 'Minimalist Logo Design' },
   { id: 6, category: 'Logos', image: logoDesign2, title: 'Luxury Fashion Logo' },
-  { id: 7, category: 'Logos', image: logoDesign3, title: 'Tech Startup Brand' },
-  { id: 8, category: 'Logos', image: logoDesign4, title: 'Creative Agency Identity' },
   { id: 45, category: 'Logos', image: logoDesign5, title: 'Technova Solutions Logo' },
   
   // Social Media Management - 4 projects
