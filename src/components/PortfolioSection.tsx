@@ -13,6 +13,10 @@ import brandIdentity5 from '@/assets/portfolio/brand-identity-5.jpg';
 import logoDesign2 from '@/assets/portfolio/logo-design-2.jpg';
 import logoDesign5 from '@/assets/portfolio/logo-design-5.jpg';
 import logoDesign6 from '@/assets/portfolio/logo-design-6.jpg';
+import logoDesign7 from '@/assets/portfolio/logo-design-7.jpg';
+import logoDesign8 from '@/assets/portfolio/logo-design-8.jpg';
+import logoDesign9 from '@/assets/portfolio/logo-design-9.jpg';
+import logoDesign10 from '@/assets/portfolio/logo-design-10.jpg';
 
 // Import portfolio images - Social Media Management
 import socialManagement1 from '@/assets/portfolio/social-management-1.jpg';
@@ -85,6 +89,10 @@ const portfolioItems = [
   { id: 6, category: 'Logos', image: logoDesign2, title: 'Luxury Fashion Logo' },
   { id: 45, category: 'Logos', image: logoDesign5, title: 'Technova Solutions Logo' },
   { id: 47, category: 'Logos', image: logoDesign6, title: 'AIMS Smile Project' },
+  { id: 48, category: 'Logos', image: logoDesign7, title: 'MONEXA' },
+  { id: 49, category: 'Logos', image: logoDesign8, title: 'Retro St.' },
+  { id: 50, category: 'Logos', image: logoDesign9, title: 'Kidolux' },
+  { id: 51, category: 'Logos', image: logoDesign10, title: 'Glowfe' },
   
   // Social Media Management - 4 projects
   { id: 9, category: 'Social Media Management', image: socialManagement1, title: 'Instagram Content Strategy' },
