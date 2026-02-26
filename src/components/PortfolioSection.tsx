@@ -62,6 +62,15 @@ import businessCard2 from '@/assets/portfolio/business-card-2.jpg';
 // Import portfolio images - Brochures
 import brochureDesign1 from '@/assets/portfolio/brochure-design-1.jpg';
 import brochureDesign2 from '@/assets/portfolio/brochure-design-2.jpg';
+import brochureDesign3 from '@/assets/portfolio/brochure-design-3.jpg';
+
+// Import additional portfolio images
+import businessCard3 from '@/assets/portfolio/business-card-3.jpg';
+import thumbnailDesign3 from '@/assets/portfolio/thumbnail-design-3.jpg';
+import thumbnailDesign4 from '@/assets/portfolio/thumbnail-design-4.jpg';
+import thumbnailDesign5 from '@/assets/portfolio/thumbnail-design-5.jpg';
+import thumbnailDesign6 from '@/assets/portfolio/thumbnail-design-6.jpg';
+import packagingDesign4 from '@/assets/portfolio/packaging-design-4.jpg';
 
 const categories = [
   'All',
@@ -119,6 +128,7 @@ const portfolioItems = [
   { id: 20, category: 'Packaging', image: packagingDesign1, title: 'Luxury Product Box' },
   { id: 21, category: 'Packaging', image: packagingDesign2, title: 'Coffee Bag Design' },
   { id: 22, category: 'Packaging', image: packagingDesign3, title: 'Cosmetics Packaging' },
+  { id: 58, category: 'Packaging', image: packagingDesign4, title: 'Craft Coffee Brand' },
   
   // T-Shirt Graphic Design - 4 projects
   { id: 23, category: 'T-Shirts', image: tshirtDesign1, title: 'Urban Streetwear Design' },
@@ -127,17 +137,23 @@ const portfolioItems = [
   { id: 32, category: 'T-Shirts', image: tshirtDesign4, title: 'Think Faster Than Fear' },
   { id: 42, category: 'T-Shirts', image: tshirtDesign5, title: 'Fitness Motivation - T-Shirt Design Collection' },
   
-  // YouTube Thumbnails - 2 projects
+  // YouTube Thumbnails
   { id: 26, category: 'Thumbnails', image: thumbnailDesign1, title: 'Gaming Channel Thumbnail' },
   { id: 27, category: 'Thumbnails', image: thumbnailDesign2, title: 'Tutorial Video Cover' },
+  { id: 52, category: 'Thumbnails', image: thumbnailDesign3, title: 'Cooking Channel - Recipe Thumbnails' },
+  { id: 53, category: 'Thumbnails', image: thumbnailDesign4, title: 'Tech Review Channel' },
+  { id: 54, category: 'Thumbnails', image: thumbnailDesign5, title: 'Tech Review Channel' },
+  { id: 55, category: 'Thumbnails', image: thumbnailDesign6, title: 'What I Eat in a Day (Healthy & Realistic)' },
   
-  // Business Card Design - 2 projects
+  // Business Card Design
   { id: 28, category: 'Business Cards', image: businessCard1, title: 'Minimal Corporate Card' },
   { id: 29, category: 'Business Cards', image: businessCard2, title: 'Premium Luxury Card' },
+  { id: 56, category: 'Business Cards', image: businessCard3, title: 'Corporate Executive - Minimalist Business Card' },
   
-  // Brochure Design - 2 projects
+  // Brochure Design
   { id: 30, category: 'Brochures', image: brochureDesign1, title: 'Corporate Tri-Fold' },
   { id: 31, category: 'Brochures', image: brochureDesign2, title: 'Company Profile Brochure' },
+  { id: 57, category: 'Brochures', image: brochureDesign3, title: 'Luxury Real Estate' },
 ];
 
 const PortfolioSection = () => {
