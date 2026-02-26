@@ -12,6 +12,7 @@ import brandIdentity5 from '@/assets/portfolio/brand-identity-5.jpg';
 // Import portfolio images - Logo Design
 import logoDesign2 from '@/assets/portfolio/logo-design-2.jpg';
 import logoDesign5 from '@/assets/portfolio/logo-design-5.jpg';
+import logoDesign6 from '@/assets/portfolio/logo-design-6.jpg';
 
 // Import portfolio images - Social Media Management
 import socialManagement1 from '@/assets/portfolio/social-management-1.jpg';
@@ -83,6 +84,7 @@ const portfolioItems = [
   // Logo Design - 4 projects
   { id: 6, category: 'Logos', image: logoDesign2, title: 'Luxury Fashion Logo' },
   { id: 45, category: 'Logos', image: logoDesign5, title: 'Technova Solutions Logo' },
+  { id: 47, category: 'Logos', image: logoDesign6, title: 'AIMS Smile Project' },
   
   // Social Media Management - 4 projects
   { id: 9, category: 'Social Media Management', image: socialManagement1, title: 'Instagram Content Strategy' },
