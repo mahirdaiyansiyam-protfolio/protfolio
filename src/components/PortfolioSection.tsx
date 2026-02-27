@@ -152,7 +152,7 @@ const portfolioItems = [
   { id: 56, category: 'Business Cards', image: businessCard3, title: 'Corporate Executive - Minimalist Business Card' },
   
   // Brochure Design
-  { id: 57, category: 'Brochures', image: brochureDesign3, title: 'Luxury Real Estate' },
+  { id: 57, category: 'Brochures', image: brochureDesign4, title: 'Luxury Real Estate' },
 ];
 
 const PortfolioSection = () => {
