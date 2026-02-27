@@ -5,30 +5,37 @@ const skills = [
   {
     title: 'Brand Strategy',
     description: 'Visual systems and design decisions aligned with clear brand positioning.',
+    level: 90,
   },
   {
     title: 'Visual Identity Design',
     description: 'Creating consistent and recognizable brand visuals across all platforms.',
+    level: 95,
   },
   {
     title: 'Social Media Strategy',
     description: 'Planning content direction to drive engagement and steady brand growth.',
+    level: 85,
   },
   {
     title: 'Content Design',
     description: 'Designing visuals optimized for attention, clarity, and performance.',
+    level: 90,
   },
   {
     title: 'Ads Creative Thinking',
     description: 'Developing ad-focused visuals designed to support campaign performance.',
+    level: 80,
   },
   {
     title: 'Typography & Layout',
     description: 'Structuring text and layouts for clarity, hierarchy, and readability.',
+    level: 88,
   },
   {
     title: 'Print Design',
     description: 'Designing print-ready assets with accurate layout and production awareness.',
+    level: 75,
   },
 ];
 
@@ -106,9 +113,25 @@ const SkillsSection = () => {
                 </h3>
 
                 {/* Description */}
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4">
                   {skill.description}
                 </p>
+
+                {/* Skill Level Bar */}
+                <div>
+                  <div className="flex justify-between items-center mb-1.5">
+                    <span className="text-xs text-muted-foreground">Proficiency</span>
+                    <span className="text-xs font-medium text-primary">{skill.level}%</span>
+                  </div>
+                  <div className="h-1.5 w-full rounded-full bg-secondary overflow-hidden">
+                    <motion.div
+                      className="h-full rounded-full bg-gradient-to-r from-primary to-primary/60"
+                      initial={{ width: 0 }}
+                      animate={isInView ? { width: `${skill.level}%` } : { width: 0 }}
+                      transition={{ duration: 1, delay: index * 0.1 + 0.3, ease: 'easeOut' }}
+                    />
+                  </div>
+                </div>
               </div>
             </motion.div>
           ))}
