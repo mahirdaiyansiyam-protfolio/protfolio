@@ -22,6 +22,9 @@ const Index = () => {
       {/* Custom cursor effect */}
       <CustomCursor />
 
+      {/* Scroll progress bar */}
+      <ScrollProgressBar />
+
       {/* Navigation */}
       <Navbar />
 
