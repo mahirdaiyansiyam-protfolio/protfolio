@@ -18,12 +18,7 @@ import logoDesign8 from '@/assets/portfolio/logo-design-8.jpg';
 import logoDesign9 from '@/assets/portfolio/logo-design-9.jpg';
 import logoDesign10 from '@/assets/portfolio/logo-design-10.jpg';
 
-// Import portfolio images - Social Media Management
-import socialManagement1 from '@/assets/portfolio/social-management-1.jpg';
-import socialManagement2 from '@/assets/portfolio/social-management-2.jpg';
-import socialManagement3 from '@/assets/portfolio/social-management-3.jpg';
-import socialManagement4 from '@/assets/portfolio/social-management-4.jpg';
-import socialManagement5 from '@/assets/portfolio/social-management-5.jpg';
+
 
 // Import portfolio images - Social Media Design
 import socialDesign5 from '@/assets/portfolio/social-design-5.jpg';
