@@ -9,6 +9,10 @@ import brandIdentity2 from '@/assets/portfolio/brand-identity-2.jpg';
 import brandIdentity3 from '@/assets/portfolio/brand-identity-3.jpg';
 import brandIdentity4 from '@/assets/portfolio/brand-identity-4.jpg';
 import brandIdentity5 from '@/assets/portfolio/brand-identity-5.jpg';
+import brandIdentity6 from '@/assets/portfolio/brand-identity-6.png';
+import brandIdentity7 from '@/assets/portfolio/brand-identity-7.png';
+import brandIdentity8 from '@/assets/portfolio/brand-identity-8.png';
+import brandIdentity9 from '@/assets/portfolio/brand-identity-9.png';
 
 // Import portfolio images - Logo Design
 import logoDesign2 from '@/assets/portfolio/logo-design-2.jpg';
