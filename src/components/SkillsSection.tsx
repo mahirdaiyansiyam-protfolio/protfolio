@@ -5,37 +5,30 @@ const skills = [
   {
     title: 'Brand Strategy',
     description: 'Visual systems and design decisions aligned with clear brand positioning.',
-    level: 90,
   },
   {
     title: 'Visual Identity Design',
     description: 'Creating consistent and recognizable brand visuals across all platforms.',
-    level: 95,
   },
   {
     title: 'Social Media Strategy',
     description: 'Planning content direction to drive engagement and steady brand growth.',
-    level: 85,
   },
   {
     title: 'Content Design',
     description: 'Designing visuals optimized for attention, clarity, and performance.',
-    level: 90,
   },
   {
     title: 'Ads Creative Thinking',
     description: 'Developing ad-focused visuals designed to support campaign performance.',
-    level: 80,
   },
   {
     title: 'Typography & Layout',
     description: 'Structuring text and layouts for clarity, hierarchy, and readability.',
-    level: 88,
   },
   {
     title: 'Print Design',
     description: 'Designing print-ready assets with accurate layout and production awareness.',
-    level: 75,
   },
 ];
 
