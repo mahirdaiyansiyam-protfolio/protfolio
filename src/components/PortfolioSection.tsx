@@ -50,6 +50,7 @@ import tshirtDesign2 from '@/assets/portfolio/tshirt-design-2.jpg';
 import tshirtDesign3 from '@/assets/portfolio/tshirt-design-3.jpg';
 import tshirtDesign4 from '@/assets/portfolio/tshirt-design-4.jpg';
 import tshirtDesign5 from '@/assets/portfolio/tshirt-design-5.jpg';
+import tshirtDesign6 from '@/assets/portfolio/tshirt-design-6.jpg';
 
 // Import portfolio images - YouTube Thumbnails
 import thumbnailDesign1 from '@/assets/portfolio/thumbnail-design-1.jpg';
@@ -137,6 +138,7 @@ const portfolioItems = [
   
   { id: 32, category: 'T-Shirts', image: tshirtDesign4, title: 'Think Faster Than Fear' },
   { id: 42, category: 'T-Shirts', image: tshirtDesign5, title: 'Fitness Motivation - T-Shirt Design Collection' },
+  { id: 59, category: 'T-Shirts', image: tshirtDesign6, title: 'Music Festival - Event Merch T-Shirt' },
   
   // YouTube Thumbnails
   { id: 26, category: 'Thumbnails', image: thumbnailDesign1, title: 'Gaming Channel Thumbnail' },
