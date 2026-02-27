@@ -79,7 +79,6 @@ const categories = [
   'All',
   'Brand Identity',
   'Logos',
-  'Social Media Management',
   'Social Media Design',
   'Ads Creative',
   'Packaging',
