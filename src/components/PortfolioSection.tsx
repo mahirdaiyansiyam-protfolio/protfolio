@@ -119,8 +119,8 @@ const PortfolioCard = ({ item, index, onClick }: {
         type: 'spring',
         stiffness: 100
       }}
-      whileHover={{ y: -10, transition: { duration: 0.3 } }}
-      className="group relative aspect-square rounded-2xl overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl hover:shadow-primary/20 transition-shadow duration-300"
+      whileHover={{ y: -8, transition: { duration: 0.3, ease: [0.42, 0, 0.58, 1] } }}
+      className="group relative aspect-square rounded-2xl overflow-hidden cursor-pointer shadow-lg transition-shadow duration-300 ease-in-out hover:shadow-[0_12px_28px_-4px_hsl(var(--primary)/0.3)]"
       onClick={onClick}
       data-cursor="pointer"
     >
