@@ -1,6 +1,29 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState, useEffect, useCallback } from 'react';
+
+const useCountUp = (end: number, isInView: boolean, duration = 2000) => {
+  const [count, setCount] = useState(0);
+  const hasAnimated = useRef(false);
+
+  useEffect(() => {
+    if (!isInView || hasAnimated.current) return;
+    hasAnimated.current = true;
+    
+    const startTime = performance.now();
+    const animate = (currentTime: number) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      // Ease out cubic
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.round(eased * end));
+      if (progress < 1) requestAnimationFrame(animate);
+    };
+    requestAnimationFrame(animate);
+  }, [isInView, end, duration]);
+
+  return count;
+};
 
 const AboutSection = () => {
   const ref = useRef(null);
@@ -65,32 +88,37 @@ const AboutSection = () => {
             From logo design to complete brand identities, I'm here to bring your vision to life.
           </p>
 
-          {/* Stats with staggered reveal */}
+          {/* Stats with count animation */}
           <div className="grid grid-cols-3 gap-6 pt-6 max-w-lg mx-auto">
-            {[
-              { number: '50+', label: 'Happy Clients' },
-              { number: '200+', label: 'Projects Done' },
-              { number: '2+', label: 'Years Experience' },
-            ].map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 30, scale: 0.9 }}
-                animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
-                transition={{ duration: 0.5, delay: 0.4 + index * 0.15 }}
-                className="text-center"
-              >
-                <div className="text-2xl md:text-3xl font-heading font-bold text-gradient">
-                  {stat.number}
-                </div>
-                <div className="text-sm text-muted-foreground mt-1">
-                  {stat.label}
-                </div>
-              </motion.div>
-            ))}
+            <CountStat end={50} suffix="+" label="Happy Clients" isInView={isInView} delay={0.4} />
+            <CountStat end={200} suffix="+" label="Projects Done" isInView={isInView} delay={0.55} />
+            <CountStat end={2} suffix="+" label="Years Experience" isInView={isInView} delay={0.7} />
           </div>
         </motion.div>
       </motion.div>
     </section>
+  );
+};
+
+const CountStat = ({ end, suffix, label, isInView, delay }: { 
+  end: number; suffix: string; label: string; isInView: boolean; delay: number;
+}) => {
+  const count = useCountUp(end, isInView, end > 100 ? 2000 : 1500);
+  
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30, scale: 0.9 }}
+      animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+      transition={{ duration: 0.5, delay }}
+      className="text-center"
+    >
+      <div className="text-2xl md:text-3xl font-heading font-bold text-gradient">
+        {count}{suffix}
+      </div>
+      <div className="text-sm text-muted-foreground mt-1">
+        {label}
+      </div>
+    </motion.div>
   );
 };
 
