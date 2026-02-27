@@ -68,6 +68,7 @@ import brochureDesign4 from '@/assets/portfolio/brochure-design-4.jpg';
 
 // Import additional portfolio images
 import businessCard3 from '@/assets/portfolio/business-card-3.jpg';
+import businessCard4 from '@/assets/portfolio/business-card-4.jpg';
 import thumbnailDesign3 from '@/assets/portfolio/thumbnail-design-3.jpg';
 import thumbnailDesign4 from '@/assets/portfolio/thumbnail-design-4.jpg';
 import thumbnailDesign5 from '@/assets/portfolio/thumbnail-design-5.jpg';
