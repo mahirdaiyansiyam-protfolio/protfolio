@@ -147,8 +147,6 @@ const portfolioItems = [
   { id: 55, category: 'Thumbnails', image: thumbnailDesign6, title: 'What I Eat in a Day (Healthy & Realistic)' },
   
   // Business Card Design
-  { id: 28, category: 'Business Cards', image: businessCard1, title: 'Minimal Corporate Card' },
-  { id: 29, category: 'Business Cards', image: businessCard2, title: 'Premium Luxury Card' },
   { id: 56, category: 'Business Cards', image: businessCard3, title: 'Corporate Executive - Minimalist Business Card' },
   
   // Brochure Design
