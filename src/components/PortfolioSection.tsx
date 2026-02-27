@@ -1,81 +1,7 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion, useInView, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { X } from 'lucide-react';
 import OptimizedImage from './OptimizedImage';
-
-// Import portfolio images - Brand Identity
-import brandIdentity1 from '@/assets/portfolio/brand-identity-1.jpg';
-import brandIdentity2 from '@/assets/portfolio/brand-identity-2.jpg';
-import brandIdentity3 from '@/assets/portfolio/brand-identity-3.jpg';
-import brandIdentity4 from '@/assets/portfolio/brand-identity-4.jpg';
-import brandIdentity5 from '@/assets/portfolio/brand-identity-5.jpg';
-import brandIdentity6 from '@/assets/portfolio/brand-identity-6.png';
-import brandIdentity7 from '@/assets/portfolio/brand-identity-7.png';
-import brandIdentity8 from '@/assets/portfolio/brand-identity-8.png';
-import brandIdentity9 from '@/assets/portfolio/brand-identity-9.png';
-
-// Import portfolio images - Logo Design
-import logoDesign2 from '@/assets/portfolio/logo-design-2.jpg';
-import logoDesign5 from '@/assets/portfolio/logo-design-5.jpg';
-import logoDesign6 from '@/assets/portfolio/logo-design-6.jpg';
-import logoDesign7 from '@/assets/portfolio/logo-design-7.jpg';
-import logoDesign8 from '@/assets/portfolio/logo-design-8.jpg';
-import logoDesign9 from '@/assets/portfolio/logo-design-9.jpg';
-import logoDesign10 from '@/assets/portfolio/logo-design-10.jpg';
-
-
-
-// Import portfolio images - Social Media Design
-import socialDesign5 from '@/assets/portfolio/social-design-5.jpg';
-import socialDesign6 from '@/assets/portfolio/social-design-6.jpg';
-import socialDesign7 from '@/assets/portfolio/social-design-7.jpg';
-
-// Import portfolio images - Ads Creative
-import adsCreative4 from '@/assets/portfolio/ads-creative-4.jpg';
-import adsCreative5 from '@/assets/portfolio/ads-creative-5.jpg';
-import adsCreative6 from '@/assets/portfolio/ads-creative-6.jpg';
-import adsCreative7 from '@/assets/portfolio/ads-creative-7.jpg';
-import adsCreative8 from '@/assets/portfolio/ads-creative-8.jpg';
-import adsCreative9 from '@/assets/portfolio/ads-creative-9.jpg';
-import adsCreative10 from '@/assets/portfolio/ads-creative-10.jpg';
-
-// Import portfolio images - Packaging Design
-import packagingDesign1 from '@/assets/portfolio/packaging-design-1.jpg';
-import packagingDesign2 from '@/assets/portfolio/packaging-design-2.jpg';
-import packagingDesign3 from '@/assets/portfolio/packaging-design-3.jpg';
-
-// Import portfolio images - T-Shirt Design
-import tshirtDesign1 from '@/assets/portfolio/tshirt-design-1.jpg';
-import tshirtDesign2 from '@/assets/portfolio/tshirt-design-2.jpg';
-import tshirtDesign3 from '@/assets/portfolio/tshirt-design-3.jpg';
-import tshirtDesign4 from '@/assets/portfolio/tshirt-design-4.jpg';
-import tshirtDesign5 from '@/assets/portfolio/tshirt-design-5.jpg';
-import tshirtDesign6 from '@/assets/portfolio/tshirt-design-6.jpg';
-
-// Import portfolio images - YouTube Thumbnails
-import thumbnailDesign1 from '@/assets/portfolio/thumbnail-design-1.jpg';
-import thumbnailDesign2 from '@/assets/portfolio/thumbnail-design-2.jpg';
-
-// Import portfolio images - Business Cards
-import businessCard1 from '@/assets/portfolio/business-card-1.jpg';
-import businessCard2 from '@/assets/portfolio/business-card-2.jpg';
-
-// Import portfolio images - Brochures
-import brochureDesign1 from '@/assets/portfolio/brochure-design-1.jpg';
-import brochureDesign2 from '@/assets/portfolio/brochure-design-2.jpg';
-import brochureDesign3 from '@/assets/portfolio/brochure-design-3.jpg';
-import brochureDesign4 from '@/assets/portfolio/brochure-design-4.jpg';
-
-// Import additional portfolio images
-import businessCard3 from '@/assets/portfolio/business-card-3.jpg';
-import businessCard4 from '@/assets/portfolio/business-card-4.jpg';
-import thumbnailDesign3 from '@/assets/portfolio/thumbnail-design-3.jpg';
-import thumbnailDesign4 from '@/assets/portfolio/thumbnail-design-4.jpg';
-import thumbnailDesign5 from '@/assets/portfolio/thumbnail-design-5.jpg';
-import thumbnailDesign6 from '@/assets/portfolio/thumbnail-design-6.jpg';
-import packagingDesign4 from '@/assets/portfolio/packaging-design-4.jpg';
-import packagingDesign5 from '@/assets/portfolio/packaging-design-5.jpg';
-import packagingDesign6 from '@/assets/portfolio/packaging-design-6.png';
 
 const categories = [
   'All',
@@ -90,66 +16,148 @@ const categories = [
   'Brochures',
 ];
 
+// Portfolio items with lazy image paths (resolved at render time)
 const portfolioItems = [
   // Brand Identity Design
-  { id: 44, category: 'Brand Identity', image: brandIdentity5, title: 'APEX Fitness - Complete Brand Identity System' },
-  { id: 63, category: 'Brand Identity', image: brandIdentity6, title: 'SaaS Brand' },
-  { id: 64, category: 'Brand Identity', image: brandIdentity7, title: 'Streetwear Clothing Brand' },
-  { id: 65, category: 'Brand Identity', image: brandIdentity8, title: 'Modern Coffee Shop Brand' },
-  { id: 66, category: 'Brand Identity', image: brandIdentity9, title: 'Streetwear T-shirt Brand' },
+  { id: 44, category: 'Brand Identity', imagePath: 'brand-identity-5.jpg', title: 'APEX Fitness - Complete Brand Identity System' },
+  { id: 63, category: 'Brand Identity', imagePath: 'brand-identity-6.png', title: 'SaaS Brand' },
+  { id: 64, category: 'Brand Identity', imagePath: 'brand-identity-7.png', title: 'Streetwear Clothing Brand' },
+  { id: 65, category: 'Brand Identity', imagePath: 'brand-identity-8.png', title: 'Modern Coffee Shop Brand' },
+  { id: 66, category: 'Brand Identity', imagePath: 'brand-identity-9.png', title: 'Streetwear T-shirt Brand' },
   
   // Logo Design
-  { id: 6, category: 'Logos', image: logoDesign2, title: 'Luxury Fashion Logo' },
-  { id: 45, category: 'Logos', image: logoDesign5, title: 'Technova Solutions Logo' },
-  { id: 47, category: 'Logos', image: logoDesign6, title: 'AIMS Smile Project' },
-  { id: 48, category: 'Logos', image: logoDesign7, title: 'MONEXA' },
-  { id: 49, category: 'Logos', image: logoDesign8, title: 'Retro St.' },
-  { id: 50, category: 'Logos', image: logoDesign9, title: 'Kidolux' },
-  { id: 51, category: 'Logos', image: logoDesign10, title: 'Glowfe' },
+  { id: 6, category: 'Logos', imagePath: 'logo-design-2.jpg', title: 'Luxury Fashion Logo' },
+  { id: 45, category: 'Logos', imagePath: 'logo-design-5.jpg', title: 'Technova Solutions Logo' },
+  { id: 47, category: 'Logos', imagePath: 'logo-design-6.jpg', title: 'AIMS Smile Project' },
+  { id: 48, category: 'Logos', imagePath: 'logo-design-7.jpg', title: 'MONEXA' },
+  { id: 49, category: 'Logos', imagePath: 'logo-design-8.jpg', title: 'Retro St.' },
+  { id: 50, category: 'Logos', imagePath: 'logo-design-9.jpg', title: 'Kidolux' },
+  { id: 51, category: 'Logos', imagePath: 'logo-design-10.jpg', title: 'Glowfe' },
   
   // Social Media Design
-  { id: 35, category: 'Social Media Design', image: socialDesign5, title: 'Glowfe Skincare - The New Glow Standard Campaign' },
-  { id: 43, category: 'Social Media Design', image: socialDesign6, title: 'Stylish Hoodie For Men' },
-  { id: 46, category: 'Social Media Design', image: socialDesign7, title: 'Summer Special Sale' },
+  { id: 35, category: 'Social Media Design', imagePath: 'social-design-5.jpg', title: 'Glowfe Skincare - The New Glow Standard Campaign' },
+  { id: 43, category: 'Social Media Design', imagePath: 'social-design-6.jpg', title: 'Stylish Hoodie For Men' },
+  { id: 46, category: 'Social Media Design', imagePath: 'social-design-7.jpg', title: 'Summer Special Sale' },
   
-  // Ads Creative Design - 7 projects
-  { id: 33, category: 'Ads Creative', image: adsCreative4, title: 'The Flame Grill - Burger Promotional Campaign' },
-  { id: 34, category: 'Ads Creative', image: adsCreative5, title: 'Premium Wireless Earbuds - Product Launch Campaign' },
-  { id: 36, category: 'Ads Creative', image: adsCreative6, title: 'Farm Fresh Meal Kit - From Box to Table Campaign' },
-  { id: 37, category: 'Ads Creative', image: adsCreative7, title: 'Pumpkin Spice Oat Latte - Fall Limited Edition' },
-  { id: 38, category: 'Ads Creative', image: adsCreative8, title: 'Amazfit GTS 4 - NEW ARRIVAL Smartwatch Launch' },
-  { id: 39, category: 'Ads Creative', image: adsCreative9, title: 'Pro Gaming Headset - Tournament Grade' },
-  { id: 40, category: 'Ads Creative', image: adsCreative10, title: 'Smart Security Camera - Family Protection System' },
+  // Ads Creative Design
+  { id: 33, category: 'Ads Creative', imagePath: 'ads-creative-4.jpg', title: 'The Flame Grill - Burger Promotional Campaign' },
+  { id: 34, category: 'Ads Creative', imagePath: 'ads-creative-5.jpg', title: 'Premium Wireless Earbuds - Product Launch Campaign' },
+  { id: 36, category: 'Ads Creative', imagePath: 'ads-creative-6.jpg', title: 'Farm Fresh Meal Kit - From Box to Table Campaign' },
+  { id: 37, category: 'Ads Creative', imagePath: 'ads-creative-7.jpg', title: 'Pumpkin Spice Oat Latte - Fall Limited Edition' },
+  { id: 38, category: 'Ads Creative', imagePath: 'ads-creative-8.jpg', title: 'Amazfit GTS 4 - NEW ARRIVAL Smartwatch Launch' },
+  { id: 39, category: 'Ads Creative', imagePath: 'ads-creative-9.jpg', title: 'Pro Gaming Headset - Tournament Grade' },
+  { id: 40, category: 'Ads Creative', imagePath: 'ads-creative-10.jpg', title: 'Smart Security Camera - Family Protection System' },
   
-  // Packaging Design - 3 projects
-  { id: 20, category: 'Packaging', image: packagingDesign1, title: 'Luxury Product Box' },
+  // Packaging Design
+  { id: 20, category: 'Packaging', imagePath: 'packaging-design-1.jpg', title: 'Luxury Product Box' },
+  { id: 22, category: 'Packaging', imagePath: 'packaging-design-3.jpg', title: 'Cosmetics Packaging' },
+  { id: 58, category: 'Packaging', imagePath: 'packaging-design-4.jpg', title: 'Craft Coffee Brand' },
+  { id: 61, category: 'Packaging', imagePath: 'packaging-design-5.jpg', title: 'Beer Bottle Label Design' },
+  { id: 62, category: 'Packaging', imagePath: 'packaging-design-6.png', title: 'Can Design' },
   
-  { id: 22, category: 'Packaging', image: packagingDesign3, title: 'Cosmetics Packaging' },
-  { id: 58, category: 'Packaging', image: packagingDesign4, title: 'Craft Coffee Brand' },
-  { id: 61, category: 'Packaging', image: packagingDesign5, title: 'Beer Bottle Label Design' },
-  { id: 62, category: 'Packaging', image: packagingDesign6, title: 'Can Design' },
-  
-  // T-Shirt Graphic Design - 4 projects
-  { id: 23, category: 'T-Shirts', image: tshirtDesign1, title: 'Urban Streetwear Design' },
-  { id: 24, category: 'T-Shirts', image: tshirtDesign2, title: 'Vintage Band Graphic' },
-  
-  { id: 32, category: 'T-Shirts', image: tshirtDesign4, title: 'Think Faster Than Fear' },
-  { id: 42, category: 'T-Shirts', image: tshirtDesign5, title: 'Fitness Motivation - T-Shirt Design Collection' },
-  { id: 59, category: 'T-Shirts', image: tshirtDesign6, title: 'Music Festival - Event Merch T-Shirt' },
+  // T-Shirt Graphic Design
+  { id: 23, category: 'T-Shirts', imagePath: 'tshirt-design-1.jpg', title: 'Urban Streetwear Design' },
+  { id: 24, category: 'T-Shirts', imagePath: 'tshirt-design-2.jpg', title: 'Vintage Band Graphic' },
+  { id: 32, category: 'T-Shirts', imagePath: 'tshirt-design-4.jpg', title: 'Think Faster Than Fear' },
+  { id: 42, category: 'T-Shirts', imagePath: 'tshirt-design-5.jpg', title: 'Fitness Motivation - T-Shirt Design Collection' },
+  { id: 59, category: 'T-Shirts', imagePath: 'tshirt-design-6.jpg', title: 'Music Festival - Event Merch T-Shirt' },
   
   // YouTube Thumbnails
-  { id: 52, category: 'Thumbnails', image: thumbnailDesign3, title: 'Cooking Channel - Recipe Thumbnails' },
-  { id: 53, category: 'Thumbnails', image: thumbnailDesign4, title: 'Tech Review Channel' },
-  { id: 54, category: 'Thumbnails', image: thumbnailDesign5, title: 'Tech Review Channel' },
-  { id: 55, category: 'Thumbnails', image: thumbnailDesign6, title: 'What I Eat in a Day (Healthy & Realistic)' },
+  { id: 52, category: 'Thumbnails', imagePath: 'thumbnail-design-3.jpg', title: 'Cooking Channel - Recipe Thumbnails' },
+  { id: 53, category: 'Thumbnails', imagePath: 'thumbnail-design-4.jpg', title: 'Tech Review Channel' },
+  { id: 54, category: 'Thumbnails', imagePath: 'thumbnail-design-5.jpg', title: 'Tech Review Channel' },
+  { id: 55, category: 'Thumbnails', imagePath: 'thumbnail-design-6.jpg', title: 'What I Eat in a Day (Healthy & Realistic)' },
   
   // Business Card Design
-  { id: 56, category: 'Business Cards', image: businessCard3, title: 'Corporate Executive - Minimalist Business Card' },
-  { id: 60, category: 'Business Cards', image: businessCard4, title: 'Minimal Corporate Business Card' },
+  { id: 56, category: 'Business Cards', imagePath: 'business-card-3.jpg', title: 'Corporate Executive - Minimalist Business Card' },
+  { id: 60, category: 'Business Cards', imagePath: 'business-card-4.jpg', title: 'Minimal Corporate Business Card' },
   
   // Brochure Design
-  { id: 57, category: 'Brochures', image: brochureDesign4, title: 'Luxury Real Estate' },
+  { id: 57, category: 'Brochures', imagePath: 'brochure-design-4.jpg', title: 'Luxury Real Estate' },
 ];
+
+// Vite glob import for lazy image loading
+const imageModules = import.meta.glob<{ default: string }>('/src/assets/portfolio/*', { eager: false });
+
+const useResolvedImage = (imagePath: string) => {
+  const [src, setSrc] = useState<string>('');
+  
+  useEffect(() => {
+    const key = `/src/assets/portfolio/${imagePath}`;
+    const loader = imageModules[key];
+    if (loader) {
+      loader().then((mod) => setSrc(mod.default));
+    }
+  }, [imagePath]);
+  
+  return src;
+};
+
+const PortfolioCard = ({ item, index, onClick }: { 
+  item: typeof portfolioItems[0]; 
+  index: number; 
+  onClick: () => void;
+}) => {
+  const imageSrc = useResolvedImage(item.imagePath);
+  
+  if (!imageSrc) return (
+    <motion.div
+      layout
+      className="aspect-square rounded-2xl bg-card animate-pulse"
+    />
+  );
+
+  return (
+    <motion.div
+      layout
+      initial={{ opacity: 0, y: 60, scale: 0.9 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      exit={{ opacity: 0, y: -30, scale: 0.9 }}
+      transition={{ 
+        duration: 0.5, 
+        delay: index * 0.08,
+        type: 'spring',
+        stiffness: 100
+      }}
+      whileHover={{ y: -10, transition: { duration: 0.3 } }}
+      className="group relative aspect-square rounded-2xl overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl hover:shadow-primary/20 transition-shadow duration-300"
+      onClick={onClick}
+      data-cursor="pointer"
+    >
+      <motion.div
+        className="w-full h-full"
+        whileHover={{ scale: 1.1 }}
+        transition={{ duration: 0.6 }}
+      >
+        <OptimizedImage
+          src={imageSrc}
+          alt={item.title}
+          width={600}
+          height={600}
+          className="w-full h-full object-cover"
+          containerClassName="w-full h-full"
+        />
+      </motion.div>
+
+      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+      <motion.div 
+        className="absolute inset-0 flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-all duration-300"
+        initial={{ y: 20 }}
+        whileHover={{ y: 0 }}
+      >
+        <span className="text-xs text-primary font-medium uppercase tracking-wider mb-2">
+          {item.category}
+        </span>
+        <h3 className="text-lg font-heading font-semibold text-foreground">
+          {item.title}
+        </h3>
+      </motion.div>
+
+      <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+    </motion.div>
+  );
+};
 
 const PortfolioSection = () => {
   const [activeCategory, setActiveCategory] = useState('All');
@@ -163,7 +171,6 @@ const PortfolioSection = () => {
     offset: ['start end', 'end start'],
   });
 
-  // Subtle parallax for the entire section
   const sectionY = useTransform(scrollYProgress, [0, 1], [30, -30]);
 
   const filteredItems = activeCategory === 'All'
@@ -218,66 +225,19 @@ const PortfolioSection = () => {
           ))}
         </motion.div>
 
-        {/* Portfolio Grid with enhanced scroll animations */}
+        {/* Portfolio Grid */}
         <motion.div
           layout
           className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           <AnimatePresence mode="popLayout">
             {filteredItems.map((item, index) => (
-              <motion.div
+              <PortfolioCard
                 key={item.id}
-                layout
-                initial={{ opacity: 0, y: 60, scale: 0.9 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                exit={{ opacity: 0, y: -30, scale: 0.9 }}
-                transition={{ 
-                  duration: 0.5, 
-                  delay: index * 0.08,
-                  type: 'spring',
-                  stiffness: 100
-                }}
-                whileHover={{ y: -10, transition: { duration: 0.3 } }}
-                className="group relative aspect-square rounded-2xl overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl hover:shadow-primary/20 transition-shadow duration-300"
+                item={item}
+                index={index}
                 onClick={() => setSelectedItem(item)}
-                data-cursor="pointer"
-              >
-                {/* Image with zoom on hover */}
-                <motion.div
-                  className="w-full h-full"
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ duration: 0.6 }}
-                >
-                  <OptimizedImage
-                    src={item.image}
-                    alt={item.title}
-                    width={600}
-                    height={600}
-                    className="w-full h-full object-cover"
-                    containerClassName="w-full h-full"
-                  />
-                </motion.div>
-
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-                {/* Content */}
-                <motion.div 
-                  className="absolute inset-0 flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-all duration-300"
-                  initial={{ y: 20 }}
-                  whileHover={{ y: 0 }}
-                >
-                  <span className="text-xs text-primary font-medium uppercase tracking-wider mb-2">
-                    {item.category}
-                  </span>
-                  <h3 className="text-lg font-heading font-semibold text-foreground">
-                    {item.title}
-                  </h3>
-                </motion.div>
-
-                {/* 3D tilt overlay */}
-                <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
-              </motion.div>
+              />
             ))}
           </AnimatePresence>
         </motion.div>
@@ -286,54 +246,61 @@ const PortfolioSection = () => {
       {/* Lightbox */}
       <AnimatePresence>
         {selectedItem && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-background/95 backdrop-blur-xl"
-            onClick={() => setSelectedItem(null)}
-          >
-            <motion.div
-              initial={{ scale: 0.8, opacity: 0, y: 50 }}
-              animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.8, opacity: 0, y: 50 }}
-              transition={{ type: 'spring', stiffness: 200, damping: 25 }}
-              className="relative max-w-4xl w-full"
-              onClick={(e) => e.stopPropagation()}
-            >
-              {/* Close button */}
-              <button
-                onClick={() => setSelectedItem(null)}
-                className="absolute -top-12 right-0 p-2 text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
-              >
-                <X size={24} />
-              </button>
-
-              {/* Image */}
-              <OptimizedImage
-                src={selectedItem.image}
-                alt={selectedItem.title}
-                width={1200}
-                height={800}
-                priority
-                className="w-full rounded-2xl shadow-2xl"
-                containerClassName="w-full"
-              />
-
-              {/* Info */}
-              <div className="mt-6 text-center">
-                <span className="text-sm text-primary font-medium uppercase tracking-wider">
-                  {selectedItem.category}
-                </span>
-                <h3 className="mt-2 text-2xl font-heading font-bold">
-                  {selectedItem.title}
-                </h3>
-              </div>
-            </motion.div>
-          </motion.div>
+          <LightboxModal item={selectedItem} onClose={() => setSelectedItem(null)} />
         )}
       </AnimatePresence>
     </section>
+  );
+};
+
+const LightboxModal = ({ item, onClose }: { item: typeof portfolioItems[0]; onClose: () => void }) => {
+  const imageSrc = useResolvedImage(item.imagePath);
+  
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-background/95 backdrop-blur-xl"
+      onClick={onClose}
+    >
+      <motion.div
+        initial={{ scale: 0.8, opacity: 0, y: 50 }}
+        animate={{ scale: 1, opacity: 1, y: 0 }}
+        exit={{ scale: 0.8, opacity: 0, y: 50 }}
+        transition={{ type: 'spring', stiffness: 200, damping: 25 }}
+        className="relative max-w-4xl w-full"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button
+          onClick={onClose}
+          className="absolute -top-12 right-0 p-2 text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
+        >
+          <X size={24} />
+        </button>
+
+        {imageSrc && (
+          <OptimizedImage
+            src={imageSrc}
+            alt={item.title}
+            width={1200}
+            height={800}
+            priority
+            className="w-full rounded-2xl shadow-2xl"
+            containerClassName="w-full"
+          />
+        )}
+
+        <div className="mt-6 text-center">
+          <span className="text-sm text-primary font-medium uppercase tracking-wider">
+            {item.category}
+          </span>
+          <h3 className="mt-2 text-2xl font-heading font-bold">
+            {item.title}
+          </h3>
+        </div>
+      </motion.div>
+    </motion.div>
   );
 };
 
