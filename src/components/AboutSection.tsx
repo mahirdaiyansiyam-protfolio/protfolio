@@ -118,7 +118,7 @@ const CountStat = ({ end, suffix, label, isInView, delay }: {
       initial={{ opacity: 0, y: 30, scale: 0.9 }}
       animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
       transition={{ duration: 0.5, delay }}
-      className="text-center"
+      className="text-center p-4 rounded-xl border border-border/50 bg-card/30 backdrop-blur-sm hover:border-primary/30 transition-colors"
     >
       <div className="text-2xl md:text-3xl font-heading font-bold text-gradient">
         {count}{suffix}
