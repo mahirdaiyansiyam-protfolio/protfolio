@@ -126,7 +126,7 @@ const portfolioItems = [
   
   // Packaging Design - 3 projects
   { id: 20, category: 'Packaging', image: packagingDesign1, title: 'Luxury Product Box' },
-  { id: 21, category: 'Packaging', image: packagingDesign2, title: 'Coffee Bag Design' },
+  
   { id: 22, category: 'Packaging', image: packagingDesign3, title: 'Cosmetics Packaging' },
   { id: 58, category: 'Packaging', image: packagingDesign4, title: 'Craft Coffee Brand' },
   
