@@ -61,7 +61,7 @@ const AboutSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="space-y-6 text-center"
+          className="space-y-8 text-center"
         >
           {/* Section label */}
           <div>
@@ -74,6 +74,14 @@ const AboutSection = () => {
               <span className="text-gradient">Experiences</span>
             </h2>
           </div>
+
+          {/* Decorative divider */}
+          <motion.div
+            initial={{ scaleX: 0 }}
+            animate={isInView ? { scaleX: 1 } : {}}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="mx-auto w-24 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent"
+          />
 
           <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
             I'm a passionate graphic designer dedicated to transforming ideas into 
@@ -89,7 +97,7 @@ const AboutSection = () => {
           </p>
 
           {/* Stats with count animation */}
-          <div className="grid grid-cols-3 gap-6 pt-6 max-w-lg mx-auto">
+          <div className="grid grid-cols-3 gap-6 pt-8 max-w-xl mx-auto">
             <CountStat end={50} suffix="+" label="Happy Clients" isInView={isInView} delay={0.4} />
             <CountStat end={200} suffix="+" label="Projects Done" isInView={isInView} delay={0.55} />
             <CountStat end={2} suffix="+" label="Years Experience" isInView={isInView} delay={0.7} />
@@ -110,7 +118,7 @@ const CountStat = ({ end, suffix, label, isInView, delay }: {
       initial={{ opacity: 0, y: 30, scale: 0.9 }}
       animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
       transition={{ duration: 0.5, delay }}
-      className="text-center"
+      className="text-center p-4 rounded-xl border border-border/50 bg-card/30 backdrop-blur-sm hover:border-primary/30 transition-colors"
     >
       <div className="text-2xl md:text-3xl font-heading font-bold text-gradient">
         {count}{suffix}
