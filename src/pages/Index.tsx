@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar';
 import ScrollProgressBar from '@/components/ScrollProgressBar';
 import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
+import ToolsSection from '@/components/ToolsSection';
 import ServicesSection from '@/components/ServicesSection';
 import SkillsSection from '@/components/SkillsSection';
 import WhyMeSection from '@/components/WhyMeSection';
@@ -35,6 +36,10 @@ const Index = () => {
         <AboutSection />
       </RevealOnScroll>
       
+      <RevealOnScroll variant="fadeUp">
+        <ToolsSection />
+      </RevealOnScroll>
+
       <RevealOnScroll variant="fadeUp" delay={0.1}>
         <ServicesSection />
       </RevealOnScroll>
