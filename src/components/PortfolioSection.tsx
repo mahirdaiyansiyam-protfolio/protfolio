@@ -239,15 +239,20 @@ const PortfolioSection = () => {
                 data-cursor="pointer"
               >
                 {/* Image with zoom on hover */}
-                <motion.img
-                  src={item.image}
-                  alt={item.title}
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-full object-cover"
+                <motion.div
+                  className="w-full h-full"
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.6 }}
-                />
+                >
+                  <OptimizedImage
+                    src={item.image}
+                    alt={item.title}
+                    width={600}
+                    height={600}
+                    className="w-full h-full object-cover"
+                    containerClassName="w-full h-full"
+                  />
+                </motion.div>
 
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
