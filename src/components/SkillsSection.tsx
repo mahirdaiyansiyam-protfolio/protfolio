@@ -106,25 +106,9 @@ const SkillsSection = () => {
                 </h3>
 
                 {/* Description */}
-                <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   {skill.description}
                 </p>
-
-                {/* Skill Level Bar */}
-                <div>
-                  <div className="flex justify-between items-center mb-1.5">
-                    <span className="text-xs text-muted-foreground">Proficiency</span>
-                    <span className="text-xs font-medium text-primary">{skill.level}%</span>
-                  </div>
-                  <div className="h-1.5 w-full rounded-full bg-secondary overflow-hidden">
-                    <motion.div
-                      className="h-full rounded-full bg-gradient-to-r from-primary to-primary/60"
-                      initial={{ width: 0 }}
-                      animate={isInView ? { width: `${skill.level}%` } : { width: 0 }}
-                      transition={{ duration: 1, delay: index * 0.1 + 0.3, ease: 'easeOut' }}
-                    />
-                  </div>
-                </div>
               </div>
             </motion.div>
           ))}
