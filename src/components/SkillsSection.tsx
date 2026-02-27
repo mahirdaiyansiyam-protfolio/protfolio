@@ -1,34 +1,47 @@
 import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
+import { Target, Layers, Share2, Layout, Lightbulb, Type, Printer, BarChart2 } from 'lucide-react';
 
 const skills = [
   {
     title: 'Brand Strategy',
     description: 'Visual systems and design decisions aligned with clear brand positioning.',
+    icon: Target,
   },
   {
     title: 'Visual Identity Design',
     description: 'Creating consistent and recognizable brand visuals across all platforms.',
+    icon: Layers,
   },
   {
     title: 'Social Media Strategy',
     description: 'Planning content direction to drive engagement and steady brand growth.',
+    icon: Share2,
   },
   {
     title: 'Content Design',
     description: 'Designing visuals optimized for attention, clarity, and performance.',
+    icon: Layout,
   },
   {
     title: 'Ads Creative Thinking',
     description: 'Developing ad-focused visuals designed to support campaign performance.',
+    icon: Lightbulb,
   },
   {
     title: 'Typography & Layout',
     description: 'Structuring text and layouts for clarity, hierarchy, and readability.',
+    icon: Type,
   },
   {
     title: 'Print Design',
     description: 'Designing print-ready assets with accurate layout and production awareness.',
+    icon: Printer,
+  },
+  {
+    title: 'Infographics',
+    description: 'Transforming complex data into clear, visually engaging graphic representations.',
+    icon: BarChart2,
   },
 ];
 
@@ -85,33 +98,39 @@ const SkillsSection = () => {
         </motion.div>
 
         {/* Skills Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {skills.map((skill, index) => (
-            <motion.div
-              key={skill.title}
-              initial={{ opacity: 0, y: 50, rotateX: -15 }}
-              animate={isInView ? { opacity: 1, y: 0, rotateX: 0 } : { opacity: 0, y: 50, rotateX: -15 }}
-              transition={{ 
-                duration: 0.6, 
-                delay: index * 0.1,
-                type: 'spring',
-                stiffness: 100
-              }}
-              className="group"
-            >
-              <div className="h-full p-6 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all duration-300 card-3d gradient-border hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/10">
-                {/* Title */}
-                <h3 className="text-lg font-heading font-semibold mb-3 group-hover:text-primary transition-colors">
-                  {skill.title}
-                </h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {skills.map((skill, index) => {
+            const Icon = skill.icon;
+            return (
+              <motion.div
+                key={skill.title}
+                initial={{ opacity: 0, y: 50, rotateX: -15 }}
+                animate={isInView ? { opacity: 1, y: 0, rotateX: 0 } : { opacity: 0, y: 50, rotateX: -15 }}
+                transition={{ 
+                  duration: 0.6, 
+                  delay: index * 0.1,
+                  type: 'spring',
+                  stiffness: 100
+                }}
+                className="group"
+              >
+                <div className="h-full p-6 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all duration-300 card-3d gradient-border hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/10">
+                  {/* Icon */}
+                  <Icon className="w-6 h-6 text-primary mb-4" />
 
-                {/* Description */}
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {skill.description}
-                </p>
-              </div>
-            </motion.div>
-          ))}
+                  {/* Title */}
+                  <h3 className="text-lg font-heading font-semibold mb-3 group-hover:text-primary transition-colors">
+                    {skill.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {skill.description}
+                  </p>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
