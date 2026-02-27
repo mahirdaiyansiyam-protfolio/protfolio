@@ -5,41 +5,44 @@ import { useRef, useState, useEffect } from 'react';
 
 const HeroSection = () => {
   const ref = useRef<HTMLElement>(null);
+  const phrases = ['Graphic Designer', 'Brand Identity Expert', 'Visual Storyteller'];
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
-  const fullText = 'Siyam';
+  const [phraseIndex, setPhraseIndex] = useState(0);
 
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start start', 'end start'],
   });
 
-  // Typing animation effect
+  // Typing animation cycling through phrases
   useEffect(() => {
-    const typingSpeed = 150;
-    const deletingSpeed = 100;
+    const currentPhrase = phrases[phraseIndex];
+    const typingSpeed = 80;
+    const deletingSpeed = 40;
     const pauseTime = 2000;
 
     const handleTyping = () => {
       if (!isDeleting) {
-        if (displayText.length < fullText.length) {
-          setDisplayText(fullText.slice(0, displayText.length + 1));
+        if (displayText.length < currentPhrase.length) {
+          setDisplayText(currentPhrase.slice(0, displayText.length + 1));
         } else {
           setTimeout(() => setIsDeleting(true), pauseTime);
           return;
         }
       } else {
         if (displayText.length > 0) {
-          setDisplayText(fullText.slice(0, displayText.length - 1));
+          setDisplayText(currentPhrase.slice(0, displayText.length - 1));
         } else {
           setIsDeleting(false);
+          setPhraseIndex((prev) => (prev + 1) % phrases.length);
         }
       }
     };
 
     const timer = setTimeout(handleTyping, isDeleting ? deletingSpeed : typingSpeed);
     return () => clearTimeout(timer);
-  }, [displayText, isDeleting]);
+  }, [displayText, isDeleting, phraseIndex]);
 
   // Parallax effects
   const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
