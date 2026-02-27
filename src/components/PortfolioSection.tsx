@@ -18,12 +18,7 @@ import logoDesign8 from '@/assets/portfolio/logo-design-8.jpg';
 import logoDesign9 from '@/assets/portfolio/logo-design-9.jpg';
 import logoDesign10 from '@/assets/portfolio/logo-design-10.jpg';
 
-// Import portfolio images - Social Media Management
-import socialManagement1 from '@/assets/portfolio/social-management-1.jpg';
-import socialManagement2 from '@/assets/portfolio/social-management-2.jpg';
-import socialManagement3 from '@/assets/portfolio/social-management-3.jpg';
-import socialManagement4 from '@/assets/portfolio/social-management-4.jpg';
-import socialManagement5 from '@/assets/portfolio/social-management-5.jpg';
+
 
 // Import portfolio images - Social Media Design
 import socialDesign5 from '@/assets/portfolio/social-design-5.jpg';
@@ -79,7 +74,6 @@ const categories = [
   'All',
   'Brand Identity',
   'Logos',
-  'Social Media Management',
   'Social Media Design',
   'Ads Creative',
   'Packaging',
@@ -105,13 +99,6 @@ const portfolioItems = [
   { id: 49, category: 'Logos', image: logoDesign8, title: 'Retro St.' },
   { id: 50, category: 'Logos', image: logoDesign9, title: 'Kidolux' },
   { id: 51, category: 'Logos', image: logoDesign10, title: 'Glowfe' },
-  
-  // Social Media Management - 4 projects
-  { id: 9, category: 'Social Media Management', image: socialManagement1, title: 'Instagram Content Strategy' },
-  { id: 10, category: 'Social Media Management', image: socialManagement2, title: 'Feed Transformation' },
-  { id: 11, category: 'Social Media Management', image: socialManagement3, title: 'Multi-Platform Campaign' },
-  { id: 12, category: 'Social Media Management', image: socialManagement4, title: 'Content Calendar System' },
-  { id: 41, category: 'Social Media Management', image: socialManagement5, title: 'Artisan Bakery Social Media Management Dashboard' },
   
   // Social Media Design
   { id: 35, category: 'Social Media Design', image: socialDesign5, title: 'Glowfe Skincare - The New Glow Standard Campaign' },
