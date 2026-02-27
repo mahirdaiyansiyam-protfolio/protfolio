@@ -97,7 +97,7 @@ const HeroSection = () => {
           >
             <span className="text-foreground">Mahir Daiyan</span>
             <br />
-            <span className="text-primary animate-pulse-glow">Siyam</span>
+            <span className="text-primary glow-text">Siyam</span>
           </motion.h1>
 
           {/* Cycling tagline */}
