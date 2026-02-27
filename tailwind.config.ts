@@ -192,8 +192,16 @@ export default {
   				'50%': {
   					backgroundPosition: '100% 50%'
   				}
-  			}
-  		},
+			},
+			'shimmer': {
+				'0%': {
+					backgroundPosition: '200% 0'
+				},
+				'100%': {
+					backgroundPosition: '-200% 0'
+				}
+			}
+		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out',
@@ -205,8 +213,9 @@ export default {
   			'float-reverse': 'float-reverse 6s ease-in-out infinite',
   			'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
   			'spin-slow': 'spin-slow 20s linear infinite',
-  			'gradient-shift': 'gradient-shift 3s ease infinite'
-  		},
+			'gradient-shift': 'gradient-shift 3s ease infinite',
+			'shimmer': 'shimmer 1.5s ease-in-out infinite'
+		},
   		backgroundSize: {
   			'200%': '200% 200%'
   		},
