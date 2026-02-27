@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react';
 import { motion, useInView, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { X } from 'lucide-react';
+import OptimizedImage from './OptimizedImage';
 
 // Import portfolio images - Brand Identity
 import brandIdentity1 from '@/assets/portfolio/brand-identity-1.jpg';
@@ -238,15 +239,20 @@ const PortfolioSection = () => {
                 data-cursor="pointer"
               >
                 {/* Image with zoom on hover */}
-                <motion.img
-                  src={item.image}
-                  alt={item.title}
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-full object-cover"
+                <motion.div
+                  className="w-full h-full"
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.6 }}
-                />
+                >
+                  <OptimizedImage
+                    src={item.image}
+                    alt={item.title}
+                    width={600}
+                    height={600}
+                    className="w-full h-full object-cover"
+                    containerClassName="w-full h-full"
+                  />
+                </motion.div>
 
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -300,10 +306,14 @@ const PortfolioSection = () => {
               </button>
 
               {/* Image */}
-              <img
+              <OptimizedImage
                 src={selectedItem.image}
                 alt={selectedItem.title}
+                width={1200}
+                height={800}
+                priority
                 className="w-full rounded-2xl shadow-2xl"
+                containerClassName="w-full"
               />
 
               {/* Info */}
