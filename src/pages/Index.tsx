@@ -1,6 +1,7 @@
 import { lazy, Suspense } from 'react';
 import CustomCursor from '@/components/CustomCursor';
 import Navbar from '@/components/Navbar';
+import ScrollProgressBar from '@/components/ScrollProgressBar';
 import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
 import ServicesSection from '@/components/ServicesSection';
@@ -20,6 +21,9 @@ const Index = () => {
     <main className="relative">
       {/* Custom cursor effect */}
       <CustomCursor />
+
+      {/* Scroll progress bar */}
+      <ScrollProgressBar />
 
       {/* Navigation */}
       <Navbar />
