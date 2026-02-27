@@ -63,6 +63,7 @@ import businessCard2 from '@/assets/portfolio/business-card-2.jpg';
 import brochureDesign1 from '@/assets/portfolio/brochure-design-1.jpg';
 import brochureDesign2 from '@/assets/portfolio/brochure-design-2.jpg';
 import brochureDesign3 from '@/assets/portfolio/brochure-design-3.jpg';
+import brochureDesign4 from '@/assets/portfolio/brochure-design-4.jpg';
 
 // Import additional portfolio images
 import businessCard3 from '@/assets/portfolio/business-card-3.jpg';
