@@ -229,8 +229,6 @@ const PortfolioSection = () => {
 };
 
 const LightboxModal = ({ item, onClose }: { item: typeof portfolioItems[0]; onClose: () => void }) => {
-  const imageSrc = useResolvedImage(item.imagePath);
-  
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -254,10 +252,9 @@ const LightboxModal = ({ item, onClose }: { item: typeof portfolioItems[0]; onCl
           <X size={24} />
         </button>
 
-        {imageSrc && (
-          <OptimizedImage
-            src={imageSrc}
-            alt={item.title}
+        <OptimizedImage
+          src={item.imageUrl}
+          alt={item.title}
             width={1200}
             height={800}
             priority
