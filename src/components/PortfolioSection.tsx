@@ -306,10 +306,14 @@ const PortfolioSection = () => {
               </button>
 
               {/* Image */}
-              <img
+              <OptimizedImage
                 src={selectedItem.image}
                 alt={selectedItem.title}
+                width={1200}
+                height={800}
+                priority
                 className="w-full rounded-2xl shadow-2xl"
+                containerClassName="w-full"
               />
 
               {/* Info */}
