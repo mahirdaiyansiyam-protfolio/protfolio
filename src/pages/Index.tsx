@@ -40,7 +40,9 @@ const Index = () => {
       </RevealOnScroll>
       
       <RevealOnScroll variant="fadeUp">
-        <PortfolioSection />
+        <Suspense fallback={<div className="section-padding bg-background"><div className="container mx-auto text-center"><div className="animate-pulse text-muted-foreground">Loading portfolio...</div></div></div>}>
+          <PortfolioSection />
+        </Suspense>
       </RevealOnScroll>
       
       <RevealOnScroll variant="blur">
