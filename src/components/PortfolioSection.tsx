@@ -122,6 +122,7 @@ const portfolioItems = [
   { id: 22, category: 'Packaging', image: packagingDesign3, title: 'Cosmetics Packaging' },
   { id: 58, category: 'Packaging', image: packagingDesign4, title: 'Craft Coffee Brand' },
   { id: 61, category: 'Packaging', image: packagingDesign5, title: 'Beer Bottle Label Design' },
+  { id: 62, category: 'Packaging', image: packagingDesign6, title: 'Can Design' },
   
   // T-Shirt Graphic Design - 4 projects
   { id: 23, category: 'T-Shirts', image: tshirtDesign1, title: 'Urban Streetwear Design' },
