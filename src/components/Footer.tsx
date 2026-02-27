@@ -7,11 +7,18 @@ const FiverrIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
+const FreelancerIcon = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path d="M20.555 5.31L17.494 4l-3.06 1.31 3.06 3.06 3.06-3.06zM14.434 8.37L12 5.937l-6.124 6.124 2.434 2.434L14.434 8.37zM5.876 14.495L3.444 12.06 0 15.506l2.434 2.434 3.442-3.445zM24 8.37l-3.445 3.445-2.434-2.434L21.566 5.937 24 8.37z" />
+  </svg>
+);
+
 const socialLinks = [
   { icon: Instagram, href: 'https://instagram.com/mohummad.mahir', label: 'Instagram' },
   { icon: Facebook, href: 'https://www.facebook.com/Mdiscretivelabs', label: 'Facebook' },
   { icon: Linkedin, href: 'https://www.linkedin.com/in/mahir-daiyan-siyam13', label: 'LinkedIn' },
   { icon: FiverrIcon, href: 'https://www.fiverr.com/mahir_daiyan_13', label: 'Fiverr' },
+  { icon: FreelancerIcon, href: 'https://www.freelancer.com/u/Siyam103', label: 'Freelancer' },
 ];
 
 const Footer = () => {
