@@ -9,6 +9,10 @@ import brandIdentity2 from '@/assets/portfolio/brand-identity-2.jpg';
 import brandIdentity3 from '@/assets/portfolio/brand-identity-3.jpg';
 import brandIdentity4 from '@/assets/portfolio/brand-identity-4.jpg';
 import brandIdentity5 from '@/assets/portfolio/brand-identity-5.jpg';
+import brandIdentity6 from '@/assets/portfolio/brand-identity-6.png';
+import brandIdentity7 from '@/assets/portfolio/brand-identity-7.png';
+import brandIdentity8 from '@/assets/portfolio/brand-identity-8.png';
+import brandIdentity9 from '@/assets/portfolio/brand-identity-9.png';
 
 // Import portfolio images - Logo Design
 import logoDesign2 from '@/assets/portfolio/logo-design-2.jpg';
@@ -93,6 +97,10 @@ const portfolioItems = [
   { id: 3, category: 'Brand Identity', image: brandIdentity3, title: 'Complete Identity System' },
   { id: 4, category: 'Brand Identity', image: brandIdentity4, title: 'Brand Style Package' },
   { id: 44, category: 'Brand Identity', image: brandIdentity5, title: 'APEX Fitness - Complete Brand Identity System' },
+  { id: 63, category: 'Brand Identity', image: brandIdentity6, title: 'SaaS Brand' },
+  { id: 64, category: 'Brand Identity', image: brandIdentity7, title: 'Streetwear Clothing Brand' },
+  { id: 65, category: 'Brand Identity', image: brandIdentity8, title: 'Modern Coffee Shop Brand' },
+  { id: 66, category: 'Brand Identity', image: brandIdentity9, title: 'Streetwear T-shirt Brand' },
   
   // Logo Design - 4 projects
   { id: 6, category: 'Logos', image: logoDesign2, title: 'Luxury Fashion Logo' },
