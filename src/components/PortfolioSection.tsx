@@ -69,6 +69,7 @@ import thumbnailDesign4 from '@/assets/portfolio/thumbnail-design-4.jpg';
 import thumbnailDesign5 from '@/assets/portfolio/thumbnail-design-5.jpg';
 import thumbnailDesign6 from '@/assets/portfolio/thumbnail-design-6.jpg';
 import packagingDesign4 from '@/assets/portfolio/packaging-design-4.jpg';
+import packagingDesign5 from '@/assets/portfolio/packaging-design-5.jpg';
 
 const categories = [
   'All',
@@ -119,6 +120,7 @@ const portfolioItems = [
   
   { id: 22, category: 'Packaging', image: packagingDesign3, title: 'Cosmetics Packaging' },
   { id: 58, category: 'Packaging', image: packagingDesign4, title: 'Craft Coffee Brand' },
+  { id: 61, category: 'Packaging', image: packagingDesign5, title: 'Beer Bottle Label Design' },
   
   // T-Shirt Graphic Design - 4 projects
   { id: 23, category: 'T-Shirts', image: tshirtDesign1, title: 'Urban Streetwear Design' },
