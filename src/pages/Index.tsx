@@ -34,10 +34,8 @@ const Index = () => {
       <RevealOnScroll variant="fadeUp">
         <AboutSection />
       </RevealOnScroll>
-      
-      <RevealOnScroll variant="fadeUp">
-        <ToolsSection />
-      </RevealOnScroll>
+
+
 
       <RevealOnScroll variant="fadeUp" delay={0.1}>
         <ServicesSection />
