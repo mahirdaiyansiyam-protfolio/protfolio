@@ -142,8 +142,6 @@ const portfolioItems = [
   { id: 59, category: 'T-Shirts', image: tshirtDesign6, title: 'Music Festival - Event Merch T-Shirt' },
   
   // YouTube Thumbnails
-  { id: 26, category: 'Thumbnails', image: thumbnailDesign1, title: 'Gaming Channel Thumbnail' },
-  { id: 27, category: 'Thumbnails', image: thumbnailDesign2, title: 'Tutorial Video Cover' },
   { id: 52, category: 'Thumbnails', image: thumbnailDesign3, title: 'Cooking Channel - Recipe Thumbnails' },
   { id: 53, category: 'Thumbnails', image: thumbnailDesign4, title: 'Tech Review Channel' },
   { id: 54, category: 'Thumbnails', image: thumbnailDesign5, title: 'Tech Review Channel' },
