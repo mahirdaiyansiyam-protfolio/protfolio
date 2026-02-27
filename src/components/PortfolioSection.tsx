@@ -261,7 +261,6 @@ const LightboxModal = ({ item, onClose }: { item: typeof portfolioItems[0]; onCl
             className="w-full rounded-2xl shadow-2xl"
             containerClassName="w-full"
           />
-        )}
 
         <div className="mt-6 text-center">
           <span className="text-sm text-primary font-medium uppercase tracking-wider">
