@@ -5,41 +5,44 @@ import { useRef, useState, useEffect } from 'react';
 
 const HeroSection = () => {
   const ref = useRef<HTMLElement>(null);
+  const phrases = ['Graphic Designer', 'Brand Identity Expert', 'Visual Storyteller'];
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
-  const fullText = 'Siyam';
+  const [phraseIndex, setPhraseIndex] = useState(0);
 
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start start', 'end start'],
   });
 
-  // Typing animation effect
+  // Typing animation cycling through phrases
   useEffect(() => {
-    const typingSpeed = 150;
-    const deletingSpeed = 100;
+    const currentPhrase = phrases[phraseIndex];
+    const typingSpeed = 80;
+    const deletingSpeed = 40;
     const pauseTime = 2000;
 
     const handleTyping = () => {
       if (!isDeleting) {
-        if (displayText.length < fullText.length) {
-          setDisplayText(fullText.slice(0, displayText.length + 1));
+        if (displayText.length < currentPhrase.length) {
+          setDisplayText(currentPhrase.slice(0, displayText.length + 1));
         } else {
           setTimeout(() => setIsDeleting(true), pauseTime);
           return;
         }
       } else {
         if (displayText.length > 0) {
-          setDisplayText(fullText.slice(0, displayText.length - 1));
+          setDisplayText(currentPhrase.slice(0, displayText.length - 1));
         } else {
           setIsDeleting(false);
+          setPhraseIndex((prev) => (prev + 1) % phrases.length);
         }
       }
     };
 
     const timer = setTimeout(handleTyping, isDeleting ? deletingSpeed : typingSpeed);
     return () => clearTimeout(timer);
-  }, [displayText, isDeleting]);
+  }, [displayText, isDeleting, phraseIndex]);
 
   // Parallax effects
   const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
@@ -94,26 +97,35 @@ const HeroSection = () => {
           >
             <span className="text-foreground">Mahir Daiyan</span>
             <br />
+            <span className="text-foreground">Siyam</span>
+          </motion.h1>
+
+          {/* Cycling tagline */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.7 }}
+            className="text-xl md:text-2xl lg:text-3xl font-heading font-medium h-10 md:h-12"
+          >
             <span className="text-gradient glow-text">{displayText}</span>
             <span className="text-gradient glow-text animate-pulse">|</span>
-          </motion.h1>
+          </motion.p>
 
           {/* Tagline */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.7 }}
+            transition={{ duration: 0.6, delay: 0.9 }}
             className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed"
           >
-            <span className="text-foreground font-medium">Graphic Designer</span>
-            {' – '}Logo, Social Media Posts, YouTube Thumbnails, Branding & Merchandise
+            Logo, Social Media Posts, YouTube Thumbnails, Branding & Merchandise
           </motion.p>
 
           {/* CTA Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.9 }}
+            transition={{ duration: 0.6, delay: 1.1 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4"
           >
             <a
