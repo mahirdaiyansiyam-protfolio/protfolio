@@ -138,6 +138,7 @@ const portfolioItems = [
   
   { id: 32, category: 'T-Shirts', image: tshirtDesign4, title: 'Think Faster Than Fear' },
   { id: 42, category: 'T-Shirts', image: tshirtDesign5, title: 'Fitness Motivation - T-Shirt Design Collection' },
+  { id: 59, category: 'T-Shirts', image: tshirtDesign6, title: 'Music Festival - Event Merch T-Shirt' },
   
   // YouTube Thumbnails
   { id: 26, category: 'Thumbnails', image: thumbnailDesign1, title: 'Gaming Channel Thumbnail' },
