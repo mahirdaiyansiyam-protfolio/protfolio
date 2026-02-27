@@ -105,13 +105,6 @@ const portfolioItems = [
   { id: 50, category: 'Logos', image: logoDesign9, title: 'Kidolux' },
   { id: 51, category: 'Logos', image: logoDesign10, title: 'Glowfe' },
   
-  // Social Media Management - 4 projects
-  { id: 9, category: 'Social Media Management', image: socialManagement1, title: 'Instagram Content Strategy' },
-  { id: 10, category: 'Social Media Management', image: socialManagement2, title: 'Feed Transformation' },
-  { id: 11, category: 'Social Media Management', image: socialManagement3, title: 'Multi-Platform Campaign' },
-  { id: 12, category: 'Social Media Management', image: socialManagement4, title: 'Content Calendar System' },
-  { id: 41, category: 'Social Media Management', image: socialManagement5, title: 'Artisan Bakery Social Media Management Dashboard' },
-  
   // Social Media Design
   { id: 35, category: 'Social Media Design', image: socialDesign5, title: 'Glowfe Skincare - The New Glow Standard Campaign' },
   { id: 43, category: 'Social Media Design', image: socialDesign6, title: 'Stylish Hoodie For Men' },
