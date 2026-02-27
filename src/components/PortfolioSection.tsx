@@ -63,6 +63,7 @@ import businessCard2 from '@/assets/portfolio/business-card-2.jpg';
 import brochureDesign1 from '@/assets/portfolio/brochure-design-1.jpg';
 import brochureDesign2 from '@/assets/portfolio/brochure-design-2.jpg';
 import brochureDesign3 from '@/assets/portfolio/brochure-design-3.jpg';
+import brochureDesign4 from '@/assets/portfolio/brochure-design-4.jpg';
 
 // Import additional portfolio images
 import businessCard3 from '@/assets/portfolio/business-card-3.jpg';
@@ -151,7 +152,7 @@ const portfolioItems = [
   { id: 56, category: 'Business Cards', image: businessCard3, title: 'Corporate Executive - Minimalist Business Card' },
   
   // Brochure Design
-  { id: 57, category: 'Brochures', image: brochureDesign3, title: 'Luxury Real Estate' },
+  { id: 57, category: 'Brochures', image: brochureDesign4, title: 'Luxury Real Estate' },
 ];
 
 const PortfolioSection = () => {
