@@ -38,9 +38,18 @@ const OptimizedImage = ({
 
   return (
     <div className={cn('relative overflow-hidden', containerClassName)}>
-      {/* Skeleton placeholder */}
+      {/* Shimmer skeleton placeholder */}
       {!isLoaded && !hasError && (
-        <div className="absolute inset-0 bg-muted animate-pulse" />
+        <div className="absolute inset-0 bg-muted">
+          <div
+            className="absolute inset-0 animate-shimmer"
+            style={{
+              backgroundImage:
+                'linear-gradient(90deg, transparent 0%, hsl(var(--muted-foreground) / 0.08) 50%, transparent 100%)',
+              backgroundSize: '200% 100%',
+            }}
+          />
+        </div>
       )}
 
       <img
@@ -53,8 +62,10 @@ const OptimizedImage = ({
         decoding={priority ? 'sync' : 'async'}
         fetchPriority={priority ? 'high' : undefined}
         className={cn(
-          'transition-opacity duration-500',
-          isLoaded || hasError ? 'opacity-100' : 'opacity-0',
+          'transition-all duration-700 ease-out',
+          isLoaded || hasError
+            ? 'opacity-100 blur-0 scale-100'
+            : 'opacity-0 blur-md scale-105',
           className
         )}
         onLoad={() => setIsLoaded(true)}
