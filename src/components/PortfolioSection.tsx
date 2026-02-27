@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react';
 import { motion, useInView, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { X } from 'lucide-react';
+import OptimizedImage from './OptimizedImage';
 
 // Import portfolio images - Brand Identity
 import brandIdentity1 from '@/assets/portfolio/brand-identity-1.jpg';
