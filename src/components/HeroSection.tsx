@@ -111,16 +111,6 @@ const HeroSection = () => {
             <span className="text-gradient glow-text animate-pulse">|</span>
           </motion.p>
 
-          {/* Tagline */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.9 }}
-            className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed"
-          >
-            Logo, Social Media Posts, YouTube Thumbnails, Branding & Merchandise
-          </motion.p>
-
           {/* CTA Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
