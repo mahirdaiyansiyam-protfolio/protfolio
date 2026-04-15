@@ -38,9 +38,11 @@ const portfolioItems = [
   { id: 35, category: 'Social Media Design', imageUrl: 'https://res.cloudinary.com/deklqluop/image/upload/f_auto,q_auto/social-design-5_ez8e1i.png', title: 'Glowfe Skincare - The New Glow Standard Campaign' },
   { id: 43, category: 'Social Media Design', imageUrl: 'https://res.cloudinary.com/deklqluop/image/upload/f_auto,q_auto/social-design-6_utcw0g.jpg', title: 'Stylish Hoodie For Men' },
   { id: 46, category: 'Social Media Design', imageUrl: 'https://res.cloudinary.com/deklqluop/image/upload/f_auto,q_auto/Untitled_design_eaxn3w.png', title: 'Summer Special Sale' },
+  { id: 67, category: 'Social Media Design', imageUrl: 'https://res.cloudinary.com/deklqluop/image/upload/f_auto,q_auto/iron_wolf_wtmmn3.jpg', title: 'Iron Wolf Gym - Social Media Design' },
+  { id: 68, category: 'Social Media Design', imageUrl: 'https://res.cloudinary.com/deklqluop/image/upload/f_auto,q_auto/NOIR_jxubki.jpg', title: 'Noir Coffee — Social Media Design' },
   
   // Ads Creative Design
-  { id: 33, category: 'Ads Creative', imageUrl: 'https://res.cloudinary.com/deklqluop/image/upload/f_auto,q_auto/ads-creative-4_mdeov3.jpg', title: 'The Flame Grill - Burger Promotional Campaign' },
+  { id: 33, category: 'Ads Creative', imageUrl: 'https://res.cloudinary.com/deklqluop/image/upload/f_auto,q_auto/DnlXr_uhqsv0.jpg', title: 'The Flame Grill - Burger Promotional Campaign' },
   { id: 34, category: 'Ads Creative', imageUrl: 'https://res.cloudinary.com/deklqluop/image/upload/f_auto,q_auto/ads-creative-5_keyocs.png', title: 'Premium Wireless Earbuds - Product Launch Campaign' },
   { id: 36, category: 'Ads Creative', imageUrl: 'https://res.cloudinary.com/deklqluop/image/upload/f_auto,q_auto/ads-creative-6_ly4hkl.jpg', title: 'Farm Fresh Meal Kit - From Box to Table Campaign' },
   { id: 37, category: 'Ads Creative', imageUrl: 'https://res.cloudinary.com/deklqluop/image/upload/f_auto,q_auto/ads-creative-7_euuluj.jpg', title: 'Pumpkin Spice Oat Latte - Fall Limited Edition' },
